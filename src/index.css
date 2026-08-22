@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Fredoka:wght@400;500;600;700&family=Sora:wght@700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-brand: "Fredoka", "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-hero: "Sora", "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  /* Aslef brand identity - sourced from the product logo (parent + child forming an "A",
+     blue-to-green gradient with a small yellow/orange heart). Blue and green are dominant;
+     yellow is a subtle accent only - never a primary UI color. */
+  --color-aslef-blue: #1786CE;
+  --color-aslef-blue-dark: #0F6396;
+  --color-aslef-blue-light: #E7F3FB;
+  --color-aslef-green: #45B85A;
+  --color-aslef-green-dark: #2E9645;
+  --color-aslef-green-light: #EAF8ED;
+  --color-aslef-yellow: #FFB51B;
+  --color-aslef-yellow-light: #FFF4DE;
+  --color-ink: #172B3A;
+  --color-ink-soft: #4B5D6B;
+  --color-bg-soft: #F8FBFD;
+  --color-white: #FFFFFF;
+  --color-border: #E3EBF0;
+
+  --shadow-card: 0 1px 2px rgba(23, 43, 58, 0.04), 0 8px 24px rgba(23, 43, 58, 0.06);
+  --shadow-card-lg: 0 4px 12px rgba(23, 43, 58, 0.06), 0 24px 48px rgba(23, 43, 58, 0.10);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html[dir="rtl"] {
+  direction: rtl;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background-color: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--color-aslef-blue);
+  color: white;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-aslef-blue);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.aslef-gradient-text {
+  background: linear-gradient(90deg, var(--color-aslef-blue), var(--color-aslef-green), var(--color-aslef-blue));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: aslef-shimmer 6s ease-in-out infinite;
+}
+
+@keyframes aslef-shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes aslef-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(18px, -14px) scale(1.06); }
+}
+
+.aslef-card-hover {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.aslef-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-lg);
+}

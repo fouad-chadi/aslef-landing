@@ -1,0 +1,257 @@
+import type { TranslationKey } from './fr';
+
+const ar: Record<TranslationKey, string> = {
+  'meta.title': 'أصلاف — إدارة الحضانة، ببساطة',
+  'meta.description':
+    'أصلاف يبسّط إدارة الحضانات ويقرّب المربيات والمديرات والأولياء في تطبيق واحد سهل وعصري.',
+
+  // Navbar
+  'nav.features': 'المميزات',
+  'nav.forWho': 'لمن هذا التطبيق؟',
+  'nav.app': 'التطبيق',
+  'nav.how': 'كيف يعمل',
+  'nav.about': 'من نحن',
+  'nav.faq': 'الأسئلة الشائعة',
+  'nav.contact': 'اتصل بنا',
+  'nav.login': 'تسجيل الدخول',
+  'nav.demo': 'اطلب عرضاً تجريبياً',
+
+  // Hero
+  'hero.headline': 'الحضانة، أقرب إلى العائلات.',
+  'hero.sub': 'أصلاف يبسّط إدارة حضانتكم ويقرّب المربيات والمديرات والأولياء في تطبيق واحد.',
+  'hero.cta.primary': 'اطلب عرضاً تجريبياً',
+  'hero.cta.secondary': 'اكتشف أصلاف',
+  'hero.badge': 'مرحباً بكم في أصلاف',
+  'hero.trust.1': 'مصمم خصيصاً للحضانات',
+  'hero.trust.2': 'سهل الاستخدام',
+  'hero.trust.3': 'الأولياء على اطلاع دائم',
+  'hero.trust.users': '+5000 مستخدم',
+  'hero.trust.usersDesc': 'يثقون بنا بالفعل',
+  'hero.trust.secure': 'آمن وموثوق',
+  'hero.trust.secureDesc': 'بياناتكم محمية',
+  'hero.chip.attendance': '12 / 15 حاضر',
+  'hero.chip.report': 'تقرير جديد',
+  'hero.chip.menu': 'قائمة الأسبوع',
+  'hero.chip.message': 'رسالة جديدة',
+  'hero.chip.photo': 'تمت إضافة صورة',
+  'hero.float.communication': 'التواصل',
+  'hero.float.communicationDesc': 'سهل وسريع',
+  'hero.float.security': 'الأمان',
+  'hero.float.securityDesc': 'أولاً',
+  'hero.float.tracking': 'المتابعة والمشاركة',
+  'hero.float.trackingDesc': 'في الوقت الحقيقي',
+
+  // Trust bar
+  'trust.headline': 'منصة واحدة لكل احتياجات الحضانة.',
+  'trust.item.management': 'الإدارة',
+  'trust.item.managementDesc': 'الأطفال والمجموعات والحضور والمدفوعات في مكان واحد.',
+  'trust.item.communication': 'التواصل',
+  'trust.item.communicationDesc': 'مراسلة مباشرة بين الحضانة والعائلات.',
+  'trust.item.tracking': 'متابعة الأطفال',
+  'trust.item.trackingDesc': 'تقارير يومية وأنشطة وصور، محدّثة كل يوم.',
+  'trust.item.apps': 'تطبيق للهاتف والويب',
+  'trust.item.appsDesc': 'متاح في كل مكان، من الحاسوب أو من الهاتف.',
+
+  // Problem / solution
+  'problem.headline': 'أوراق أقل. رسائل أقل تشتتاً. وقت أكثر للأطفال.',
+  'problem.item.1': 'معلومات متفرقة بين الدفاتر ومجموعات واتساب والمكالمات',
+  'problem.item.2': 'صعوبة متابعة الحضور في الوقت الحقيقي',
+  'problem.item.3': 'تقارير يومية تُنجز يدوياً، وغالباً متأخرة',
+  'problem.item.4': 'أولياء يطلبون الأخبار باستمرار',
+  'problem.item.5': 'قوائم الطعام والأنشطة تُرسل بشكل منفصل، بدون سجلّ',
+  'problem.item.6': 'إدارة ومدفوعات يصعب متابعتها',
+  'problem.solution': 'أصلاف يجمع كل شيء في مكان واحد.',
+  'problem.solutionDesc': 'تطبيق واحد للإدارة والتواصل والمتابعة اليومية لكل طفل — مصمم خصيصاً للحضانات الجزائرية.',
+
+  // Roles
+  'roles.headline': 'تطبيق واحد، ثلاث طرق لاستخدامه.',
+  'roles.sub': 'كل دور يجد بالضبط ما يحتاجه، لا أكثر.',
+
+  'roles.manager.title': 'أدر حضانتك بكل بساطة.',
+  'roles.manager.item.1': 'الأطفال والمجموعات',
+  'roles.manager.item.2': 'المربيات',
+  'roles.manager.item.3': 'الحضور',
+  'roles.manager.item.4': 'المدفوعات',
+  'roles.manager.item.5': 'القوائم والأنشطة',
+  'roles.manager.item.6': 'الوثائق',
+  'roles.manager.item.7': 'التواصل',
+  'roles.manager.cta': 'اكتشف فضاء المديرة',
+
+  'roles.educator.title': 'كل ما تحتاجينه، مباشرة في قسمك.',
+  'roles.educator.item.1': 'الحضور',
+  'roles.educator.item.2': 'التقارير اليومية',
+  'roles.educator.item.3': 'الأنشطة',
+  'roles.educator.item.4': 'الحوادث',
+  'roles.educator.item.5': 'الصور',
+  'roles.educator.item.6': 'التواصل مع الأولياء',
+  'roles.educator.cta': 'اكتشف فضاء المربية',
+
+  'roles.parent.title': 'ابق قريباً من طفلك، حتى وهو في الحضانة.',
+  'roles.parent.item.1': 'التقرير اليومي',
+  'roles.parent.item.2': 'الوجبات',
+  'roles.parent.item.3': 'القيلولة',
+  'roles.parent.item.4': 'الأنشطة',
+  'roles.parent.item.5': 'الصور',
+  'roles.parent.item.6': 'قائمة الأسبوع',
+  'roles.parent.item.7': 'الرسائل',
+  'roles.parent.item.8': 'المعلومات المهمة',
+  'roles.parent.cta': 'اكتشف فضاء الولي',
+
+  // Features
+  'features.headline': 'كل يوميات الحضانة، في تطبيق واحد.',
+  'features.sub': 'كل ميزة مصممة لتوفير الوقت، دون أي خسارة في الوضوح.',
+
+  'features.attendance.title': 'الحضور',
+  'features.attendance.desc': 'نظرة واحدة تكفي لمعرفة من حاضر.',
+  'features.attendance.body':
+    'تسجّل المديرة والمربيات الحضور في ثوانٍ معدودة، مجموعة تلو الأخرى، مع رؤية واضحة لليوم كاملاً.',
+
+  'features.reports.title': 'التقارير اليومية',
+  'features.reports.desc': 'يوميات كل طفل، متابَعة ببساطة.',
+  'features.reports.body': 'المزاج، الشهية، القيلولة، المشاركة وملاحظات المربية: كل ولي يتلقى تقريراً واضحاً وكاملاً كل يوم.',
+
+  'features.messaging.title': 'المراسلة',
+  'features.messaging.desc': 'تواصل مباشر بين الحضانة والعائلات.',
+  'features.messaging.body': 'لا مزيد من مجموعات واتساب المتفرقة: كل محادثة تبقى منظمة وخاصة ومرتبطة بالطفل المعني.',
+
+  'features.photos.title': 'الصور',
+  'features.photos.desc': 'شاركوا اللحظات المهمة مع العائلات المعنية.',
+  'features.photos.body': 'تنشر المربيات صوراً من يوميات الطفل، مرئية فقط من طرف الأولياء المعنيين.',
+
+  'features.menu.title': 'قائمة الأسبوع',
+  'features.menu.desc': 'قائمة الأسبوع متاحة دائماً للأولياء.',
+  'features.menu.body': 'تنشر المديرة القائمة مرة واحدة، وتجدها كل عائلة فوراً داخل التطبيق.',
+
+  'features.activities.title': 'الأنشطة',
+  'features.activities.desc': 'أظهروا ما يكتشفه الأطفال كل يوم.',
+  'features.activities.body': 'الخرجات والألعاب والورشات: أهم لحظات اليوم تُشارَك بكل بساطة مع العائلات.',
+
+  'features.documents.title': 'الوثائق',
+  'features.documents.desc': 'كل الوثائق المهمة في مكان واحد.',
+  'features.documents.body': 'العقود والاستمارات والمثبتات تبقى متاحة في أي وقت، للحضانة وللأولياء.',
+
+  'features.payments.title': 'المدفوعات',
+  'features.payments.desc': 'رؤية واضحة على المدفوعات.',
+  'features.payments.body': 'تتابع المديرة الفواتير والمبالغ المعلّقة، بدون جداول أو دفاتر منفصلة.',
+
+  // Product showcase
+  'showcase.headline': 'تجربة مصممة لكل مستخدم.',
+  'showcase.sub': 'نفس المنتج، ثلاث تجارب مكيّفة حسب كل استخدام.',
+  'showcase.manager.label': 'المديرة',
+  'showcase.manager.device': 'لوحة القيادة على الويب',
+  'showcase.educator.label': 'المربية',
+  'showcase.educator.device': 'تطبيق الهاتف',
+  'showcase.parent.label': 'الولي',
+  'showcase.parent.device': 'تطبيق الهاتف',
+
+  // Security
+  'security.headline': 'معلومات كل طفل تبقى خاصة.',
+  'security.sub': 'الخصوصية جزء من تصميم أصلاف منذ البداية، وليست خياراً أُضيف لاحقاً.',
+  'security.item.roles': 'الوصول حسب الدور',
+  'security.item.rolesDesc': 'كل مستخدم يرى فقط ما يتوافق مع دوره: مديرة، مربية أو ولي.',
+  'security.item.isolation': 'بيانات معزولة لكل حضانة',
+  'security.item.isolationDesc': 'معلومات حضانة لا تختلط أبداً مع معلومات حضانة أخرى.',
+  'security.item.linked': 'الأولياء مرتبطون بأطفالهم',
+  'security.item.linkedDesc': 'لا يصل الولي إلا إلى معلومات الأطفال المرتبطين به.',
+  'security.item.privacy': 'تواصل خاص',
+  'security.item.privacyDesc': 'المحادثات بين الحضانة والعائلة تبقى مرئية فقط من طرف المعنيين.',
+  'security.item.permissions': 'التحكم في الصلاحيات',
+  'security.item.permissionsDesc': 'تبقى المديرة متحكمة في من يمكنه فعل ماذا داخل الحضانة.',
+
+  // How it works
+  'how.badge': 'كيف يعمل التطبيق؟',
+  'how.headline': 'أصلاف، في 4 خطوات بسيطة',
+  'how.sub': 'كل ما تحتاجونه، ببضع نقرات.',
+  'how.step1.title': 'أنشئ حسابك',
+  'how.step1.desc': 'سجّل بسرعة في ثوانٍ معدودة.',
+  'how.step2.title': 'ابحث بسهولة',
+  'how.step2.desc': 'اكتشف وصل إلى كل ما تحتاجه.',
+  'how.step3.title': 'تواصل',
+  'how.step3.desc': 'تبادل المعلومات وابق على اطلاع في الوقت الحقيقي.',
+  'how.step4.title': 'استمتع بهدوء بال',
+  'how.step4.desc': 'أدر وتابع وبسّط يومياتك.',
+  'how.bottom.secure': 'آمن وموثوق',
+  'how.bottom.secureDesc': 'بياناتكم محمية وراحة بالكم مضمونة.',
+  'how.bottom.ctaTitle': 'مستعدون لتبسيط يومياتكم؟',
+  'how.bottom.ctaDesc': 'انضموا إلى أصلاف الآن.',
+
+  // FAQ
+  'faq.headline': 'الأسئلة الشائعة',
+  'faq.q1': 'هل يعمل أصلاف على الهاتف؟',
+  'faq.a1': 'نعم. أصلاف متاح كتطبيق هاتف للمربيات والمديرات والأولياء، وكذلك كتطبيق ويب للإدارة الكاملة للحضانة.',
+  'faq.q2': 'من يمكنه استخدام أصلاف؟',
+  'faq.a2': 'أصلاف مصمم لثلاث فئات: مديرات الحضانات، المربيات والأولياء. كل واحد يجد فضاءً مكيّفاً حسب دوره.',
+  'faq.q3': 'هل يمكن للأولياء متابعة عدة أطفال؟',
+  'faq.a3': 'نعم. يمكن ربط حساب الولي بعدة أطفال ومتابعة التقرير اليومي لكل واحد منهم على حدة.',
+  'faq.q4': 'هل يمكن للمربيات إنجاز التقارير اليومية؟',
+  'faq.a4': 'نعم، هذه إحدى الميزات الأساسية للمربيات: المزاج، الشهية، القيلولة، المشاركة والملاحظات، مباشرة من التطبيق.',
+  'faq.q5': 'هل يمكن للأولياء استقبال رسائل؟',
+  'faq.a5': 'نعم. المراسلة تتيح تواصلاً مباشراً وخاصاً بين الحضانة وكل عائلة، دون المرور عبر مجموعات خارجية.',
+  'faq.q6': 'هل قائمة الأسبوع مرئية للأولياء؟',
+  'faq.a6': 'نعم. بمجرد نشرها من طرف المديرة، تصبح قائمة الأسبوع مرئية فوراً للعائلات المعنية.',
+  'faq.q7': 'هل يعمل أصلاف باللغة العربية؟',
+  'faq.a7': 'نعم. أصلاف متاح بالفرنسية والعربية، بواجهة مكيّفة للقراءة من اليمين إلى اليسار.',
+  'faq.q8': 'كيف نبدأ باستخدام أصلاف؟',
+  'faq.a8': 'يمكنكم طلب عرض تجريبي مباشرة من هذا الموقع. نقوم بعدها بإعداد حضانتكم ومرافقة فريقكم في التعامل مع التطبيق.',
+
+  // Hero feature strip
+  'strip.connected.title': 'متصل',
+  'strip.connected.desc': 'ابقوا على تواصل في كل لحظة، أينما كنتم.',
+  'strip.secure.title': 'آمن',
+  'strip.secure.desc': 'بياناتكم وبيانات أحبائكم محمية بشكل جيد.',
+  'strip.notifications.title': 'إشعارات',
+  'strip.notifications.desc': 'استلموا المعلومات المهمة في الوقت الحقيقي.',
+  'strip.simple.title': 'بسيط',
+  'strip.simple.desc': 'واجهة سهلة لاستخدام يومي بلا عناء.',
+
+  // About
+  'about.badge': 'من نحن',
+  'about.headline': 'حول أصلاف',
+  'about.p1': 'نحن جزائريان شابان شغوفان بالتكنولوجيا والابتكار.',
+  'about.p2': 'أنشأنا أصلاف بفكرة بسيطة: تبسيط الحياة اليومية وخلق روابط ذات معنى.',
+  'about.value.passion.title': 'الشغف',
+  'about.value.passion.desc': 'نحب ما نقوم به.',
+  'about.value.innovation.title': 'الابتكار',
+  'about.value.innovation.desc': 'نبني حلولاً مفيدة.',
+  'about.value.engagement.title': 'الالتزام',
+  'about.value.engagement.desc': 'نصغي إليكم ونبقى قريبين منكم.',
+  'about.quote': 'تطبيق صُمم بكل حب، من أجلكم.',
+
+  // Contact
+  'contact.badge': 'اتصل بنا',
+  'contact.headline': 'لديكم سؤال؟',
+  'contact.headlineHighlight': 'نحن هنا من أجلكم.',
+  'contact.sub': 'لا تترددوا في مراسلتنا، سنرد عليكم في أقرب وقت ممكن.',
+  'contact.email.label': 'البريد الإلكتروني',
+  'contact.email.value': 'contact@aslef.dz',
+  'contact.phone.label': 'الهاتف',
+  'contact.phone.value': '+213 5 55 55 55 55',
+  'contact.location.label': 'الموقع',
+  'contact.location.value': 'قسنطينة، الجزائر',
+
+  // Final CTA
+  'cta.headline': 'مستعدون لتبسيط إدارة حضانتكم؟',
+  'cta.sub': 'اكتشفوا طريقة جديدة لإدارة حضانتكم والبقاء قريبين من العائلات.',
+  'cta.primary': 'اطلب عرضاً تجريبياً',
+  'cta.secondary': 'اتصل بنا',
+
+  // Footer
+  'footer.tagline': 'إدارة الحضانة، ببساطة.',
+  'footer.linksTitle': 'أصلاف',
+  'footer.legalTitle': 'معلومات قانونية',
+  'footer.link.features': 'المميزات',
+  'footer.link.manager': 'للمديرات',
+  'footer.link.educator': 'للمربيات',
+  'footer.link.parent': 'للأولياء',
+  'footer.link.faq': 'الأسئلة الشائعة',
+  'footer.link.contact': 'اتصل بنا',
+  'footer.legal.privacy': 'الخصوصية',
+  'footer.legal.terms': 'الشروط',
+  'footer.legal.deletion': 'حذف الحساب',
+  'footer.rights': 'جميع الحقوق محفوظة.',
+
+  // Common
+  'common.langSwitch': 'Français',
+};
+
+export default ar;

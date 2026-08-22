@@ -1,0 +1,80 @@
+import { Globe } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
+import { Container } from './ui/Container';
+import logo from '../assets/logo.png';
+
+export function Footer() {
+  const { t, lang, toggleLang } = useLanguage();
+  const year = new Date().getFullYear();
+
+  const links = [
+    { key: 'footer.link.features', href: '#fonctionnalites' },
+    { key: 'footer.link.manager', href: '#pour-qui' },
+    { key: 'footer.link.educator', href: '#pour-qui' },
+    { key: 'footer.link.parent', href: '#pour-qui' },
+    { key: 'footer.link.faq', href: '#faq' },
+    { key: 'footer.link.contact', href: '#contact' },
+  ] as const;
+
+  const legal = [
+    { key: 'footer.legal.privacy', href: '#' },
+    { key: 'footer.legal.terms', href: '#' },
+    { key: 'footer.legal.deletion', href: '#' },
+  ] as const;
+
+  return (
+    <footer className="border-t border-[var(--color-border)] bg-white">
+      <Container className="py-14">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr]">
+          <div>
+            <a href="#top" className="flex items-center gap-2" aria-label="Aslef, accueil">
+              <img src={logo} alt="Aslef" className="h-9 w-9 object-contain" />
+              <span className="font-brand text-xl font-semibold tracking-tight text-[var(--color-ink)]">Aslef</span>
+            </a>
+            <p className="mt-3 max-w-[260px] text-[14px] text-[var(--color-ink-soft)]">{t('footer.tagline')}</p>
+
+            <button
+              type="button"
+              onClick={toggleLang}
+              className="mt-6 flex items-center gap-1.5 rounded-full border border-[var(--color-border)] px-3 py-2 text-[13px] font-semibold text-[var(--color-ink-soft)] transition-colors hover:border-[var(--color-aslef-blue)] hover:text-[var(--color-aslef-blue)]"
+              aria-label={lang === 'fr' ? 'Passer en arabe' : 'التبديل إلى الفرنسية'}
+            >
+              <Globe size={14} aria-hidden />
+              {lang === 'fr' ? 'FR / AR' : 'AR / FR'}
+            </button>
+          </div>
+
+          <div>
+            <h3 className="text-[12.5px] font-bold uppercase tracking-wide text-[var(--color-ink-soft)]">{t('footer.linksTitle')}</h3>
+            <ul className="mt-4 space-y-2.5">
+              {links.map((link) => (
+                <li key={link.key}>
+                  <a href={link.href} className="text-[14.5px] text-[var(--color-ink-soft)] hover:text-[var(--color-aslef-blue)] transition-colors">
+                    {t(link.key)}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-[12.5px] font-bold uppercase tracking-wide text-[var(--color-ink-soft)]">{t('footer.legalTitle')}</h3>
+            <ul className="mt-4 space-y-2.5">
+              {legal.map((item) => (
+                <li key={item.key}>
+                  <a href={item.href} className="text-[14.5px] text-[var(--color-ink-soft)] hover:text-[var(--color-aslef-blue)] transition-colors">
+                    {t(item.key)}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-12 border-t border-[var(--color-border)] pt-6 text-center text-[13px] text-[var(--color-ink-soft)]">
+          © {year} Aslef. {t('footer.rights')}
+        </div>
+      </Container>
+    </footer>
+  );
+}
