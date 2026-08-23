@@ -67,6 +67,7 @@ const ar: Record<TranslationKey, string> = {
   'roles.headline': 'تطبيق واحد، ثلاث طرق لاستخدامه.',
   'roles.sub': 'كل دور يجد بالضبط ما يحتاجه، لا أكثر.',
 
+  'roles.manager.tab': 'المديرة',
   'roles.manager.title': 'أدر حضانتك بكل بساطة.',
   'roles.manager.item.1': 'الأطفال والمجموعات',
   'roles.manager.item.2': 'المربيات',
@@ -77,6 +78,7 @@ const ar: Record<TranslationKey, string> = {
   'roles.manager.item.7': 'التواصل',
   'roles.manager.cta': 'اكتشف فضاء المديرة',
 
+  'roles.educator.tab': 'المربية',
   'roles.educator.title': 'كل ما تحتاجينه، مباشرة في قسمك.',
   'roles.educator.item.1': 'الحضور',
   'roles.educator.item.2': 'التقارير اليومية',
@@ -86,6 +88,7 @@ const ar: Record<TranslationKey, string> = {
   'roles.educator.item.6': 'التواصل مع الأولياء',
   'roles.educator.cta': 'اكتشف فضاء المربية',
 
+  'roles.parent.tab': 'الولي',
   'roles.parent.title': 'ابق قريباً من طفلك، حتى وهو في الحضانة.',
   'roles.parent.item.1': 'التقرير اليومي',
   'roles.parent.item.2': 'الوجبات',

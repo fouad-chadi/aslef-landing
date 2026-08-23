@@ -67,6 +67,7 @@ const fr = {
   'roles.headline': 'Une application, trois façons de l’utiliser.',
   'roles.sub': 'Chaque rôle retrouve exactement ce dont il a besoin, rien de plus.',
 
+  'roles.manager.tab': 'Gestionnaire',
   'roles.manager.title': 'Pilotez votre crèche simplement.',
   'roles.manager.item.1': 'Enfants et groupes',
   'roles.manager.item.2': 'Éducatrices',
@@ -77,6 +78,7 @@ const fr = {
   'roles.manager.item.7': 'Communication',
   'roles.manager.cta': "Découvrir l'espace gestionnaire",
 
+  'roles.educator.tab': 'Éducatrice',
   'roles.educator.title': 'Tout ce dont vous avez besoin, directement dans votre classe.',
   'roles.educator.item.1': 'Présence',
   'roles.educator.item.2': 'Rapports quotidiens',
@@ -86,6 +88,7 @@ const fr = {
   'roles.educator.item.6': 'Communication avec les parents',
   'roles.educator.cta': "Découvrir l'espace éducatrice",
 
+  'roles.parent.tab': 'Parent',
   'roles.parent.title': 'Restez proche de votre enfant, même quand il est à la crèche.',
   'roles.parent.item.1': 'Rapport quotidien',
   'roles.parent.item.2': 'Repas',
