@@ -226,7 +226,7 @@ const ar: Record<TranslationKey, string> = {
   'contact.headlineHighlight': 'نحن هنا من أجلكم.',
   'contact.sub': 'لا تترددوا في مراسلتنا، سنرد عليكم في أقرب وقت ممكن.',
   'contact.email.label': 'البريد الإلكتروني',
-  'contact.email.value': 'contact@aslef.dz',
+  'contact.email.value': 'contact@aslef.app',
   'contact.phone.label': 'الهاتف',
   'contact.phone.value': '+213 5 55 55 55 55',
   'contact.location.label': 'الموقع',

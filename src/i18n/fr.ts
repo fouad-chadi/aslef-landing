@@ -241,7 +241,7 @@ const fr = {
   'contact.headlineHighlight': 'Nous sommes là pour vous.',
   'contact.sub': 'N’hésitez pas à nous écrire, nous vous répondrons dans les plus brefs délais.',
   'contact.email.label': 'Email',
-  'contact.email.value': 'contact@aslef.dz',
+  'contact.email.value': 'contact@aslef.app',
   'contact.phone.label': 'Téléphone',
   'contact.phone.value': '+213 5 55 55 55 55',
   'contact.location.label': 'Localisation',
