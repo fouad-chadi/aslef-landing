@@ -5,8 +5,6 @@ import { Hero } from './components/Hero';
 import { TrustBar } from './components/TrustBar';
 import { ProblemSolution } from './components/ProblemSolution';
 import { Roles } from './components/Roles';
-import { Features } from './components/Features';
-import { ProductShowcase } from './components/ProductShowcase';
 import { Security } from './components/Security';
 import { HowItWorks } from './components/HowItWorks';
 import { About } from './components/About';
@@ -24,8 +22,6 @@ function App() {
           <TrustBar />
           <ProblemSolution />
           <Roles />
-          <Features />
-          <ProductShowcase />
           <Security />
           <HowItWorks />
           <About />

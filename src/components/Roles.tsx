@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Check, ArrowRight, ArrowLeft, Users2, GraduationCap, Heart } from 'lucide-react';
+import { Check, Users2, GraduationCap, Heart } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { Container, Section } from './ui/Container';
 import { fadeInUp, viewportOnce } from '../lib/motion';
@@ -98,8 +98,7 @@ const accentStyles = {
 } as const;
 
 export function Roles() {
-  const { t, isRtl } = useLanguage();
-  const Arrow = isRtl ? ArrowLeft : ArrowRight;
+  const { t } = useLanguage();
   const [activeKey, setActiveKey] = useState(roles[0].key);
   const active = roles.find((r) => r.key === activeKey) ?? roles[0];
   const style = accentStyles[active.accent];
@@ -167,14 +166,6 @@ export function Roles() {
                   </li>
                 ))}
               </ul>
-
-              <a
-                href="#application"
-                className={`mt-9 inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-[15px] font-bold text-white transition-all duration-200 hover:-translate-y-0.5 ${style.button}`}
-              >
-                {t(active.ctaKey)}
-                <Arrow size={16} aria-hidden />
-              </a>
             </motion.div>
           </AnimatePresence>
         </div>

@@ -15,9 +15,9 @@ const fr = {
   'nav.demo': 'Demander une démo',
 
   // Hero
-  'hero.headline': 'La crèche, plus proche des familles.',
+  'hero.headline': 'Aslef, une nouvelle façon de vivre la crèche.',
   'hero.sub':
-    "Aslef simplifie la gestion de votre crèche et rapproche les éducatrices, les gestionnaires et les parents dans une seule application.",
+    "Grâce à une seule application, les parents restent informés du quotidien de leur enfant, tandis que les éducatrices et administratrices bénéficient d'une gestion plus simple, fluide et organisée.",
   'hero.cta.primary': 'Demander une démo',
   'hero.cta.secondary': 'Découvrir Aslef',
   'hero.badge': 'Bienvenue sur Aslef',
@@ -223,7 +223,7 @@ const fr = {
 
   // About
   'about.badge': 'À propos de nous',
-  'about.headline': "À propos d'Aslef",
+  'about.headline': "À propos de l'équipe Aslef",
   'about.p1': 'Nous sommes deux jeunes Algériens passionnés par la technologie et l’innovation.',
   'about.p2':
     'Nous avons créé Aslef avec une idée simple : simplifier le quotidien et créer des connexions qui ont du sens.',
@@ -243,7 +243,7 @@ const fr = {
   'contact.email.label': 'Email',
   'contact.email.value': 'contact@aslef.app',
   'contact.phone.label': 'Téléphone',
-  'contact.phone.value': '+213 5 55 55 55 55',
+  'contact.phone.value': '05 40 17 67 68',
   'contact.location.label': 'Localisation',
   'contact.location.value': 'Constantine, Algérie',
 

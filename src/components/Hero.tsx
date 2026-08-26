@@ -5,7 +5,6 @@ import { Heart, MessageCircle, ShieldCheck, BarChart3, Wifi, Bell, Smile, Shield
 import { useLanguage } from '../context/LanguageContext';
 import { Container } from './ui/Container';
 import { Button } from './ui/Button';
-import { CountUp } from './ui/CountUp';
 import { HeartDoodle, PaperPlaneDoodle, StarDoodle } from './ui/Doodles';
 import { fadeInUp, staggerContainer, viewportOnce } from '../lib/motion';
 import type { TranslationKey } from '../i18n/fr';
@@ -157,30 +156,6 @@ export function Hero() {
               ))}
             </motion.ul>
 
-            <motion.div variants={fadeInUp} className="mt-7 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 lg:justify-start">
-              <div className="flex items-center gap-2.5">
-                <div className="flex -space-x-2.5">
-                  {['#1786CE', '#45B85A', '#FFB51B'].map((c) => (
-                    <span key={c} className="h-8 w-8 rounded-full border-2 border-white shadow-sm" style={{ backgroundColor: c }} />
-                  ))}
-                </div>
-                <div className="text-start">
-                  <p className="text-[14px] font-bold text-[var(--color-ink)]">
-                    <CountUp to={5000} prefix="+" />
-                  </p>
-                  <p className="text-[11.5px] text-[var(--color-ink-soft)]">{t('hero.trust.usersDesc')}</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-2.5">
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--color-aslef-yellow-light)] text-[var(--color-aslef-yellow)]">
-                  <ShieldCheck size={16} aria-hidden />
-                </span>
-                <div className="text-start">
-                  <p className="text-[14px] font-bold text-[var(--color-ink)]">{t('hero.trust.secure')}</p>
-                  <p className="text-[11.5px] text-[var(--color-ink-soft)]">{t('hero.trust.secureDesc')}</p>
-                </div>
-              </div>
-            </motion.div>
           </motion.div>
 
           <motion.div
