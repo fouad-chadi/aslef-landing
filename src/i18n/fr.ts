@@ -13,6 +13,7 @@ const fr = {
   'nav.contact': 'Contact',
   'nav.login': 'Se connecter',
   'nav.demo': 'Demander une démo',
+  'nav.download': "Télécharger l'application",
 
   // Hero
   'hero.headline': 'Aslef, une nouvelle façon de vivre la crèche.',
@@ -20,6 +21,7 @@ const fr = {
     "Grâce à une seule application, les parents restent informés du quotidien de leur enfant, tandis que les éducatrices et administratrices bénéficient d'une gestion plus simple, fluide et organisée.",
   'hero.cta.primary': 'Demander une démo',
   'hero.cta.secondary': 'Découvrir Aslef',
+  'hero.cta.download': "Télécharger l'application",
   'hero.badge': 'Bienvenue sur Aslef',
   'hero.trust.1': 'Pensé pour les crèches',
   'hero.trust.2': 'Simple à utiliser',

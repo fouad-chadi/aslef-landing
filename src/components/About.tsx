@@ -67,7 +67,7 @@ export function About() {
               <img src={crechePhoto} alt="Équipe éducative avec des enfants à la crèche" className="h-full w-full object-cover" loading="lazy" />
             </div>
 
-            <div className="absolute -bottom-6 start-1/2 w-[88%] -translate-x-1/2 rounded-2xl border border-[var(--color-border)] bg-white/95 px-5 py-4 shadow-[var(--shadow-card)] backdrop-blur">
+            <div className="absolute -bottom-6 left-1/2 w-[88%] -translate-x-1/2 rounded-2xl border border-[var(--color-border)] bg-white/95 px-5 py-4 shadow-[var(--shadow-card)] backdrop-blur">
               <div className="flex items-center gap-3">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--color-aslef-blue-light)] text-[var(--color-aslef-blue)]">
                   <HeartHandshake size={18} aria-hidden />

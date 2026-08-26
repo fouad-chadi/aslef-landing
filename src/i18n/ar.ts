@@ -15,12 +15,14 @@ const ar: Record<TranslationKey, string> = {
   'nav.contact': 'اتصل بنا',
   'nav.login': 'تسجيل الدخول',
   'nav.demo': 'اطلب عرضاً تجريبياً',
+  'nav.download': 'تحميل التطبيق',
 
   // Hero
   'hero.headline': 'الحضانة، أقرب إلى العائلات.',
   'hero.sub': 'أصلاف يبسّط إدارة حضانتكم ويقرّب المربيات والمديرات والأولياء في تطبيق واحد.',
   'hero.cta.primary': 'اطلب عرضاً تجريبياً',
   'hero.cta.secondary': 'اكتشف أصلاف',
+  'hero.cta.download': 'تحميل التطبيق',
   'hero.badge': 'مرحباً بكم في أصلاف',
   'hero.trust.1': 'مصمم خصيصاً للحضانات',
   'hero.trust.2': 'سهل الاستخدام',

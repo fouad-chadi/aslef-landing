@@ -8,7 +8,6 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   const links = [
-    { key: 'footer.link.features', href: '#fonctionnalites' },
     { key: 'footer.link.manager', href: '#pour-qui' },
     { key: 'footer.link.educator', href: '#pour-qui' },
     { key: 'footer.link.parent', href: '#pour-qui' },
