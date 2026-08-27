@@ -5,7 +5,6 @@ import { Heart, MessageCircle, ShieldCheck, BarChart3, Wifi, Bell, Smile, Shield
 import { useLanguage } from '../context/LanguageContext';
 import { Container } from './ui/Container';
 import { Button } from './ui/Button';
-import { APP_DOWNLOAD_URL } from '../lib/links';
 import { HeartDoodle, PaperPlaneDoodle, StarDoodle } from './ui/Doodles';
 import { fadeInUp, staggerContainer, viewportOnce } from '../lib/motion';
 import type { TranslationKey } from '../i18n/fr';
@@ -142,12 +141,6 @@ export function Hero() {
             <motion.div variants={fadeInUp} className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
               <Button as="a" href="#contact" size="lg" className="w-full sm:w-auto">
                 {t('hero.cta.primary')}
-              </Button>
-              <Button as="a" href="#application" variant="secondary" size="lg" className="w-full sm:w-auto">
-                {t('hero.cta.secondary')}
-              </Button>
-              <Button as="a" href={APP_DOWNLOAD_URL} variant="ghost" size="lg" className="w-full sm:w-auto">
-                {t('hero.cta.download')}
               </Button>
             </motion.div>
 
