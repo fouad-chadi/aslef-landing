@@ -245,7 +245,7 @@ const fr = {
   'contact.email.label': 'Email',
   'contact.email.value': 'contact@aslef.app',
   'contact.phone.label': 'Téléphone',
-  'contact.phone.value': '05 40 17 67 68',
+  'contact.phone.value': '06 98 11 52 22',
   'contact.location.label': 'Localisation',
   'contact.location.value': 'Constantine, Algérie',
 

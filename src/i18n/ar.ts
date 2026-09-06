@@ -230,7 +230,7 @@ const ar: Record<TranslationKey, string> = {
   'contact.email.label': 'البريد الإلكتروني',
   'contact.email.value': 'contact@aslef.app',
   'contact.phone.label': 'الهاتف',
-  'contact.phone.value': '05 40 17 67 68',
+  'contact.phone.value': '06 98 11 52 22',
   'contact.location.label': 'الموقع',
   'contact.location.value': 'قسنطينة، الجزائر',
 
