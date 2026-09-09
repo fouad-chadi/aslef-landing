@@ -1,12 +1,11 @@
 import { Globe } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { Container } from './ui/Container';
-import { FacebookIcon, TikTokIcon } from './ui/SocialIcons';
 import logo from '../assets/logo.png';
 
 const socials = [
-  { name: 'Facebook', href: 'https://www.facebook.com/share/1CtoWo2ee6/?mibextid=wwXIfr', Icon: FacebookIcon },
-  { name: 'TikTok', href: 'https://www.tiktok.com/@aslef.app?_r=1&_t=ZS-99bEOGjE2dj', Icon: TikTokIcon },
+  { name: 'Facebook', href: 'https://www.facebook.com/share/1CtoWo2ee6/?mibextid=wwXIfr', icon: '/icons8-facebook-96.png' },
+  { name: 'TikTok', href: 'https://www.tiktok.com/@aslef.app?_r=1&_t=ZS-99bEOGjE2dj', icon: '/icons8-tiktok-94.png' },
 ] as const;
 
 export function Footer() {
@@ -49,16 +48,16 @@ export function Footer() {
             </button>
 
             <div className="mt-5 flex items-center gap-2.5">
-              {socials.map(({ name, href, Icon }) => (
+              {socials.map(({ name, href, icon }) => (
                 <a
                   key={name}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={name}
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-ink-soft)] transition-colors hover:border-[var(--color-aslef-blue)] hover:text-[var(--color-aslef-blue)]"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] transition-colors hover:border-[var(--color-aslef-blue)]"
                 >
-                  <Icon className="h-4 w-4" />
+                  <img src={icon} alt="" className="h-5 w-5 object-contain" />
                 </a>
               ))}
             </div>
