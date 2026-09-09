@@ -1,7 +1,13 @@
 import { Globe } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { Container } from './ui/Container';
+import { FacebookIcon, TikTokIcon } from './ui/SocialIcons';
 import logo from '../assets/logo.png';
+
+const socials = [
+  { name: 'Facebook', href: 'https://www.facebook.com/share/1CtoWo2ee6/?mibextid=wwXIfr', Icon: FacebookIcon },
+  { name: 'TikTok', href: 'https://www.tiktok.com/@aslef.app?_r=1&_t=ZS-99bEOGjE2dj', Icon: TikTokIcon },
+] as const;
 
 export function Footer() {
   const { t, lang, toggleLang } = useLanguage();
@@ -41,6 +47,21 @@ export function Footer() {
               <Globe size={14} aria-hidden />
               {lang === 'fr' ? 'FR / AR' : 'AR / FR'}
             </button>
+
+            <div className="mt-5 flex items-center gap-2.5">
+              {socials.map(({ name, href, Icon }) => (
+                <a
+                  key={name}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={name}
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-ink-soft)] transition-colors hover:border-[var(--color-aslef-blue)] hover:text-[var(--color-aslef-blue)]"
+                >
+                  <Icon className="h-4 w-4" />
+                </a>
+              ))}
+            </div>
           </div>
 
           <div>
