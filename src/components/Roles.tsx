@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Check, Users2, GraduationCap, Heart } from 'lucide-react';
+import { Check, Users2, GraduationCap, Heart, Bus } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { Container, Section } from './ui/Container';
 import { fadeInUp, viewportOnce } from '../lib/motion';
@@ -9,7 +9,7 @@ import type { TranslationKey } from '../i18n/fr';
 interface RoleCard {
   key: string;
   icon: typeof Users2;
-  accent: 'blue' | 'green' | 'purple';
+  accent: 'blue' | 'green' | 'purple' | 'yellow';
   tabKey: TranslationKey;
   titleKey: TranslationKey;
   items: TranslationKey[];
@@ -65,8 +65,23 @@ const roles: RoleCard[] = [
       'roles.parent.item.6',
       'roles.parent.item.7',
       'roles.parent.item.8',
+      'roles.parent.item.9',
     ],
     ctaKey: 'roles.parent.cta',
+  },
+  {
+    key: 'transport',
+    icon: Bus,
+    accent: 'yellow',
+    tabKey: 'roles.transport.tab',
+    titleKey: 'roles.transport.title',
+    items: [
+      'roles.transport.item.1',
+      'roles.transport.item.2',
+      'roles.transport.item.3',
+      'roles.transport.item.4',
+    ],
+    ctaKey: 'roles.transport.cta',
   },
 ];
 
@@ -94,6 +109,14 @@ const accentStyles = {
     check: 'text-[#7C3AED]',
     button: 'bg-[#7C3AED] hover:brightness-[1.06]',
     bar: 'bg-[#7C3AED]',
+  },
+  yellow: {
+    tabActive: 'bg-[var(--color-aslef-yellow)] text-white shadow-[var(--shadow-card)]',
+    tabInactive: 'bg-[var(--color-aslef-yellow-light)] text-[var(--color-aslef-yellow)]',
+    badge: 'bg-[var(--color-aslef-yellow-light)] text-[var(--color-aslef-yellow)]',
+    check: 'text-[var(--color-aslef-yellow)]',
+    button: 'bg-[var(--color-aslef-yellow)] hover:brightness-[1.06]',
+    bar: 'bg-[var(--color-aslef-yellow)]',
   },
 } as const;
 

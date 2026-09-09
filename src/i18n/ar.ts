@@ -66,7 +66,7 @@ const ar: Record<TranslationKey, string> = {
   'problem.solutionDesc': 'تطبيق واحد للإدارة والتواصل والمتابعة اليومية لكل طفل — مصمم خصيصاً للحضانات الجزائرية.',
 
   // Roles
-  'roles.headline': 'تطبيق واحد، ثلاث طرق لاستخدامه.',
+  'roles.headline': 'تطبيق واحد، أربع طرق لاستخدامه.',
   'roles.sub': 'كل دور يجد بالضبط ما يحتاجه، لا أكثر.',
 
   'roles.manager.tab': 'المديرة',
@@ -100,7 +100,16 @@ const ar: Record<TranslationKey, string> = {
   'roles.parent.item.6': 'قائمة الأسبوع',
   'roles.parent.item.7': 'الرسائل',
   'roles.parent.item.8': 'المعلومات المهمة',
+  'roles.parent.item.9': 'تتبع رحلة النقل',
   'roles.parent.cta': 'اكتشف فضاء الولي',
+
+  'roles.transport.tab': 'المرافقة',
+  'roles.transport.title': 'تابعي كل رحلة، بكل اطمئنان.',
+  'roles.transport.item.1': 'رحلات الصباح والمساء',
+  'roles.transport.item.2': 'حالة كل طفل في الوقت الحقيقي',
+  'roles.transport.item.3': 'تأكيد الاستلام من طرف الولي',
+  'roles.transport.item.4': 'سجل الرحلات',
+  'roles.transport.cta': 'اكتشف فضاء المرافقة',
 
   // Features
   'features.headline': 'كل يوميات الحضانة، في تطبيق واحد.',

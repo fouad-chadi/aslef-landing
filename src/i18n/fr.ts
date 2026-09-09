@@ -66,7 +66,7 @@ const fr = {
     'Une seule application pour la gestion, la communication et le suivi quotidien de chaque enfant — pensée pour les crèches algériennes.',
 
   // Roles
-  'roles.headline': 'Une application, trois façons de l’utiliser.',
+  'roles.headline': 'Une application, quatre façons de l’utiliser.',
   'roles.sub': 'Chaque rôle retrouve exactement ce dont il a besoin, rien de plus.',
 
   'roles.manager.tab': 'Gestionnaire',
@@ -100,7 +100,16 @@ const fr = {
   'roles.parent.item.6': 'Menu de la semaine',
   'roles.parent.item.7': 'Messages',
   'roles.parent.item.8': 'Informations importantes',
+  'roles.parent.item.9': 'Suivi du trajet de transport',
   'roles.parent.cta': "Découvrir l'espace parent",
+
+  'roles.transport.tab': 'Accompagnatrice',
+  'roles.transport.title': 'Suivez chaque trajet, en toute sérénité.',
+  'roles.transport.item.1': 'Trajets du matin et du soir',
+  'roles.transport.item.2': 'Statut en temps réel par enfant',
+  'roles.transport.item.3': 'Confirmation de récupération par le parent',
+  'roles.transport.item.4': 'Historique des trajets',
+  'roles.transport.cta': "Découvrir l'espace accompagnatrice",
 
   // Features
   'features.headline': 'Tout le quotidien de la crèche, dans une seule application.',
