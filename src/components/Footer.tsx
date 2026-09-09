@@ -56,9 +56,9 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={name}
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] transition-colors hover:border-[var(--color-aslef-blue)]"
+                  className="flex items-center justify-center transition-opacity hover:opacity-75"
                 >
-                  <img src={icon} alt="" className="h-5 w-5 object-contain" />
+                  <img src={icon} alt="" className="h-8 w-8 object-contain" />
                 </a>
               ))}
             </div>
