@@ -6,6 +6,7 @@ import logo from '../assets/logo.png';
 const socials = [
   { name: 'Facebook', href: 'https://www.facebook.com/share/1CtoWo2ee6/?mibextid=wwXIfr', icon: '/icons8-facebook-96.png' },
   { name: 'TikTok', href: 'https://www.tiktok.com/@aslef.app?_r=1&_t=ZS-99bEOGjE2dj', icon: '/icons8-tiktok-94.png' },
+  { name: 'Google', href: 'https://share.google/1LYFolZTBG4XwvBlZ', icon: '/icons8-location-94.png' },
 ] as const;
 
 export function Footer() {
