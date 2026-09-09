@@ -48,7 +48,7 @@ export function Footer() {
               {lang === 'fr' ? 'FR / AR' : 'AR / FR'}
             </button>
 
-            <div className="mt-5 flex items-center gap-2.5">
+            <div className="mt-5 flex items-center justify-center gap-2.5 sm:justify-start">
               {socials.map(({ name, href, icon }) => (
                 <a
                   key={name}
