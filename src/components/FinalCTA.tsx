@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { Container, Section } from './ui/Container';
+import { APP_DOWNLOAD_URL } from '../lib/links';
 import { Button } from './ui/Button';
 import { fadeInUp, staggerContainer, viewportOnce } from '../lib/motion';
 import type { TranslationKey } from '../i18n/fr';
@@ -43,7 +44,7 @@ export function FinalCTA() {
                 {t('contact.sub')}
               </motion.p>
               <motion.div variants={fadeInUp} className="mt-8">
-                <Button as="a" href={`mailto:${t('contact.email.value')}`} size="lg">
+                <Button as="a" href={APP_DOWNLOAD_URL} size="lg">
                   {t('cta.primary')}
                 </Button>
               </motion.div>

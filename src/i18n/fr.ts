@@ -12,14 +12,12 @@ const fr = {
   'nav.faq': 'FAQ',
   'nav.contact': 'Contact',
   'nav.login': 'Se connecter',
-  'nav.demo': 'Demander une démo',
   'nav.download': "Télécharger l'application",
 
   // Hero
   'hero.headline': 'Aslef, une nouvelle façon de vivre la crèche.',
   'hero.sub':
     "Grâce à une seule application, les parents restent informés du quotidien de leur enfant, tandis que les éducatrices et administratrices bénéficient d'une gestion plus simple, fluide et organisée.",
-  'hero.cta.primary': 'Demander une démo',
   'hero.cta.secondary': 'Découvrir Aslef',
   'hero.cta.download': "Télécharger l'application",
   'hero.badge': 'Bienvenue sur Aslef',
@@ -220,7 +218,7 @@ const fr = {
   'faq.a7': "Oui. Aslef est disponible en français et en arabe, avec une interface adaptée à la lecture de droite à gauche.",
   'faq.q8': 'Comment démarrer avec Aslef ?',
   'faq.a8':
-    "Vous pouvez demander une démo directement depuis ce site. Nous configurons ensuite votre crèche et accompagnons votre équipe dans la prise en main.",
+    "Téléchargez l'application directement depuis ce site, puis connectez-vous avec les identifiants remis par votre crèche. Pour toute question, n'hésitez pas à nous contacter.",
 
   // Hero feature strip
   'strip.connected.title': 'Connecté',
@@ -261,7 +259,7 @@ const fr = {
   // Final CTA
   'cta.headline': 'Prêt à simplifier votre crèche ?',
   'cta.sub': 'Découvrez une nouvelle façon de gérer votre crèche et de rester proche des familles.',
-  'cta.primary': 'Demander une démo',
+  'cta.primary': "Télécharger l'application",
   'cta.secondary': 'Nous contacter',
 
   // Footer

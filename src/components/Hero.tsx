@@ -4,6 +4,7 @@ import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } fro
 import { Heart, MessageCircle, ShieldCheck, BarChart3, Wifi, Bell, Smile, ShieldCheck as ShieldIcon } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { Container } from './ui/Container';
+import { APP_DOWNLOAD_URL } from '../lib/links';
 import { Button } from './ui/Button';
 import { HeartDoodle, PaperPlaneDoodle, StarDoodle } from './ui/Doodles';
 import { fadeInUp, staggerContainer, viewportOnce } from '../lib/motion';
@@ -139,8 +140,8 @@ export function Hero() {
             </motion.p>
 
             <motion.div variants={fadeInUp} className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
-              <Button as="a" href="#contact" size="lg" className="w-full sm:w-auto">
-                {t('hero.cta.primary')}
+              <Button as="a" href={APP_DOWNLOAD_URL} size="lg" className="w-full sm:w-auto">
+                {t('hero.cta.download')}
               </Button>
             </motion.div>
 

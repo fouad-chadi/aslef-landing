@@ -77,11 +77,8 @@ export function Navbar() {
             <a href="#contact" className="text-[14.5px] font-semibold text-[var(--color-ink)] hover:text-[var(--color-aslef-blue)] transition-colors px-2">
               {t('nav.login')}
             </a>
-            <Button as="a" href={APP_DOWNLOAD_URL} variant="ghost" size="md">
+            <Button as="a" href={APP_DOWNLOAD_URL} size="md">
               {t('nav.download')}
-            </Button>
-            <Button as="a" href="#contact" size="md">
-              {t('nav.demo')}
             </Button>
           </div>
 
@@ -143,10 +140,7 @@ export function Navbar() {
                 {t('nav.login')}
               </a>
               <div className="mt-3 flex flex-col gap-2.5">
-                <Button as="a" href="#contact" size="lg" className="w-full" onClick={() => setMobileOpen(false)}>
-                  {t('nav.demo')}
-                </Button>
-                <Button as="a" href={APP_DOWNLOAD_URL} variant="ghost" size="lg" className="w-full" onClick={() => setMobileOpen(false)}>
+                <Button as="a" href={APP_DOWNLOAD_URL} size="lg" className="w-full" onClick={() => setMobileOpen(false)}>
                   {t('nav.download')}
                 </Button>
               </div>

@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { UserCheck, SearchCheck, MessageCircle, Heart, LayoutGrid, ShieldCheck } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { Container, Section } from './ui/Container';
+import { APP_DOWNLOAD_URL } from '../lib/links';
 import { Button } from './ui/Button';
 import { fadeInUp, staggerContainer, viewportOnce } from '../lib/motion';
 import type { TranslationKey } from '../i18n/fr';
@@ -89,8 +90,8 @@ export function HowItWorks() {
             <h3 className="text-[15px] font-bold text-[var(--color-ink)]">{t('how.bottom.ctaTitle')}</h3>
             <p className="mt-1 text-[13px] text-[var(--color-ink-soft)]">{t('how.bottom.ctaDesc')}</p>
           </div>
-          <Button as="a" href="#contact" size="md" className="w-full sm:w-auto">
-            {t('hero.cta.primary')}
+          <Button as="a" href={APP_DOWNLOAD_URL} size="md" className="w-full sm:w-auto">
+            {t('hero.cta.download')}
           </Button>
         </motion.div>
       </Container>
