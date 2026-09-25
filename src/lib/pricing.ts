@@ -8,19 +8,25 @@ export type Capacity = (typeof CAPACITY_OPTIONS)[number];
 export const ACCESS_OPTIONS = [2, 4] as const;
 export type AccessCount = (typeof ACCESS_OPTIONS)[number];
 
-// 1 parent account / 1 child, per 3 months. Additional children on the same
-// parent account are +500 DA/3mo each, but that only applies once real
-// parent accounts with real children exist - not to the initial capacity
-// chosen at registration.
+// Each parent account is 1000 DA/3mo. Additional children on the same parent
+// account are +500 DA/3mo each, but that only applies once a real parent
+// account has real children - not to the initial capacity chosen at
+// registration (child counts aren't known yet).
 export const PARENT_BASE_PRICE = 1000;
 export const EXTRA_CHILD_PRICE = 500;
 
-const ACCESS_PRICE: Record<AccessCount, number> = { 2: 1000, 4: 2000 };
+// 2 access is included in the base price. Going to 4 access adds 1000 DA/3mo
+// - per parent account, same as the base price, not a flat one-time fee.
+export const ACCESS_UPGRADE_PRICE = 1000;
 
-export function accessPrice(access: AccessCount): number {
-  return ACCESS_PRICE[access];
+export function pricePerAccount(access: AccessCount): number {
+  return PARENT_BASE_PRICE + (access === 4 ? ACCESS_UPGRADE_PRICE : 0);
 }
 
-export function totalEstimate(access: AccessCount): number {
-  return PARENT_BASE_PRICE + accessPrice(access);
+export function totalEstimate(capacity: Capacity, access: AccessCount): number {
+  return capacity * pricePerAccount(access);
+}
+
+export function formatDA(amount: number): string {
+  return amount.toLocaleString('fr-FR').replace(/ /g, ' ');
 }

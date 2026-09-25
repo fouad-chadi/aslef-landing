@@ -5,7 +5,17 @@ import { useLanguage } from '../context/LanguageContext';
 import { Container, Section } from './ui/Container';
 import { Button } from './ui/Button';
 import { fadeInUp, staggerContainer, viewportOnce } from '../lib/motion';
-import { CAPACITY_OPTIONS, ACCESS_OPTIONS, PARENT_BASE_PRICE, accessPrice, totalEstimate, type Capacity, type AccessCount } from '../lib/pricing';
+import {
+  CAPACITY_OPTIONS,
+  ACCESS_OPTIONS,
+  PARENT_BASE_PRICE,
+  ACCESS_UPGRADE_PRICE,
+  pricePerAccount,
+  totalEstimate,
+  formatDA,
+  type Capacity,
+  type AccessCount,
+} from '../lib/pricing';
 
 const WHATSAPP_NUMBER = '213540176768';
 
@@ -25,7 +35,8 @@ export function Registration() {
   const [error, setError] = useState(false);
   const [sent, setSent] = useState(false);
 
-  const total = useMemo(() => totalEstimate(access), [access]);
+  const perAccount = useMemo(() => pricePerAccount(access), [access]);
+  const total = useMemo(() => totalEstimate(capacity, access), [capacity, access]);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -45,7 +56,7 @@ export function Registration() {
       wilaya.trim() ? `📍 Wilaya: ${wilaya.trim()}` : null,
       `👨‍👩‍👧 Capacité: ${capacity} comptes parents`,
       `👥 Accès: ${access}`,
-      `💰 Offre estimée: ${total} DA / 3 mois`,
+      `💰 Offre estimée: ${formatDA(perAccount)} DA/compte × ${capacity} = ${formatDA(total)} DA / 3 mois`,
     ].filter((line): line is string => line !== null);
 
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`;
@@ -179,25 +190,38 @@ export function Registration() {
               <div className="flex items-center justify-between text-[14.5px]">
                 <span className="text-[var(--color-ink-soft)]">{t('register.pricing.parent.title')}</span>
                 <span className="font-semibold text-[var(--color-ink)]">
-                  {PARENT_BASE_PRICE} {t('register.pricing.perQuarter')}
+                  {formatDA(PARENT_BASE_PRICE)} {t('register.pricing.perQuarter')}
+                </span>
+              </div>
+              {access === 4 && (
+                <div className="flex items-center justify-between text-[14.5px]">
+                  <span className="text-[var(--color-ink-soft)]">{t('register.pricing.access.title')}</span>
+                  <span className="font-semibold text-[var(--color-ink)]">
+                    +{formatDA(ACCESS_UPGRADE_PRICE)} {t('register.pricing.perQuarter')}
+                  </span>
+                </div>
+              )}
+              <div className="flex items-center justify-between border-t border-dashed border-[var(--color-border)] pt-3 text-[14.5px]">
+                <span className="text-[var(--color-ink-soft)]">{t('register.pricing.perAccount.title')}</span>
+                <span className="font-semibold text-[var(--color-ink)]">
+                  {formatDA(perAccount)} {t('register.pricing.perQuarter')}
+                </span>
+              </div>
+              <div className="flex items-center justify-between text-[14.5px]">
+                <span className="text-[var(--color-ink-soft)]">
+                  {t('register.pricing.multiplier.title')} × {capacity}
                 </span>
               </div>
               <div className="flex items-center justify-between text-[14.5px]">
                 <span className="text-[var(--color-ink-soft)]">{t('register.pricing.extraChild.title')}</span>
                 <span className="font-semibold text-[var(--color-ink)]">{t('register.pricing.extraChild.value')}</span>
               </div>
-              <div className="flex items-center justify-between text-[14.5px]">
-                <span className="text-[var(--color-ink-soft)]">{t('register.pricing.access.title')}</span>
-                <span className="font-semibold text-[var(--color-ink)]">
-                  {accessPrice(access)} {t('register.pricing.perQuarter')}
-                </span>
-              </div>
             </div>
 
             <div className="mt-5 flex items-center justify-between rounded-2xl bg-[var(--color-bg-soft)] px-4 py-4">
               <span className="text-[15px] font-bold text-[var(--color-ink)]">{t('register.pricing.total.title')}</span>
               <span className="font-brand text-[22px] font-bold text-[var(--color-aslef-blue)]">
-                {total} {t('register.pricing.perQuarter')}
+                {formatDA(total)} {t('register.pricing.perQuarter')}
               </span>
             </div>
 
