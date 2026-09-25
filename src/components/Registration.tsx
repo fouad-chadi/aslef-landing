@@ -6,7 +6,7 @@ import { Container, Section } from './ui/Container';
 import { Button } from './ui/Button';
 import { fadeInUp, staggerContainer, viewportOnce } from '../lib/motion';
 import {
-  CAPACITY_OPTIONS,
+  DEFAULT_CAPACITY,
   ACCESS_OPTIONS,
   PARENT_BASE_PRICE,
   ACCESS_UPGRADE_PRICE,
@@ -30,7 +30,7 @@ export function Registration() {
   const [crecheName, setCrecheName] = useState('');
   const [crechePhone, setCrechePhone] = useState('');
   const [wilaya, setWilaya] = useState('');
-  const [capacity, setCapacity] = useState<Capacity>(20);
+  const [capacity, setCapacity] = useState<Capacity>(DEFAULT_CAPACITY);
   const [access, setAccess] = useState<AccessCount>(2);
   const [error, setError] = useState(false);
   const [sent, setSent] = useState(false);
@@ -127,22 +127,13 @@ export function Registration() {
             <div className="mt-6">
               <label className="mb-1.5 block text-[13px] font-semibold text-[var(--color-ink)]">{t('register.field.capacity')}</label>
               <p className="mb-2.5 text-[12.5px] text-[var(--color-ink-soft)]">{t('register.field.capacity.help')}</p>
-              <div className="flex flex-wrap gap-2">
-                {CAPACITY_OPTIONS.map((option) => (
-                  <button
-                    key={option}
-                    type="button"
-                    onClick={() => setCapacity(option)}
-                    className={`rounded-full px-4 py-2 text-[14px] font-semibold transition-colors ${
-                      capacity === option
-                        ? 'bg-[var(--color-aslef-blue)] text-white shadow-[var(--shadow-card)]'
-                        : 'bg-[var(--color-aslef-blue-light)] text-[var(--color-aslef-blue)] hover:brightness-95'
-                    }`}
-                  >
-                    {option}
-                  </button>
-                ))}
-              </div>
+              <input
+                type="number"
+                min={1}
+                value={capacity}
+                onChange={(e) => setCapacity(Math.max(1, Number(e.target.value) || 1))}
+                className={inputClasses}
+              />
             </div>
 
             <div className="mt-6">

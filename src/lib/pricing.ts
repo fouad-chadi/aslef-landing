@@ -2,8 +2,8 @@
 // This is the landing page's own estimate calculator (no backend behind this
 // static site) - it mirrors the business rules given for the registration
 // form, not the production billing engine.
-export const CAPACITY_OPTIONS = [10, 20, 30, 40, 50] as const;
-export type Capacity = (typeof CAPACITY_OPTIONS)[number];
+export const DEFAULT_CAPACITY = 20;
+export type Capacity = number;
 
 export const ACCESS_OPTIONS = [2, 4] as const;
 export type AccessCount = (typeof ACCESS_OPTIONS)[number];
