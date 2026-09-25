@@ -11,6 +11,7 @@ import type { TranslationKey } from '../i18n/fr';
 const NAV_LINKS: { key: TranslationKey; href: string }[] = [
   { key: 'nav.how', href: '#comment-ca-marche' },
   { key: 'nav.about', href: '#a-propos' },
+  { key: 'nav.register', href: '#inscription' },
   { key: 'nav.contact', href: '#contact' },
 ];
 

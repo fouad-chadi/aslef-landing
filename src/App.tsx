@@ -9,6 +9,7 @@ import { Security } from './components/Security';
 import { HowItWorks } from './components/HowItWorks';
 import { About } from './components/About';
 import { FAQ } from './components/FAQ';
+import { Registration } from './components/Registration';
 import { FinalCTA } from './components/FinalCTA';
 import { Footer } from './components/Footer';
 
@@ -26,6 +27,7 @@ function App() {
           <HowItWorks />
           <About />
           <FAQ />
+          <Registration />
           <FinalCTA />
         </main>
         <Footer />
