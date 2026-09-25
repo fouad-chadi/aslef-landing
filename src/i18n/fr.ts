@@ -284,7 +284,7 @@ const fr = {
   'register.pricing.multiplier.title': 'Nombre de comptes',
   'register.pricing.total.title': 'Total',
   'register.pricing.note': "Le prix final dépend de la capacité réellement utilisée et sera confirmé avec vous avant activation.",
-  'register.submit': 'Envoyer ma demande sur WhatsApp',
+  'register.submit': 'Envoyer ma demande',
   'register.error.required': 'Le nom de la crèche et le téléphone sont obligatoires.',
   'register.success': 'Merci ! Continuez la conversation sur WhatsApp pour finaliser votre inscription.',
 

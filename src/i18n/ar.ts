@@ -269,7 +269,7 @@ const ar: Record<TranslationKey, string> = {
   'register.pricing.multiplier.title': 'عدد الحسابات',
   'register.pricing.total.title': 'المجموع',
   'register.pricing.note': 'السعر النهائي يعتمد على السعة المستخدمة فعلياً وسيتم تأكيده معكم قبل التفعيل.',
-  'register.submit': 'أرسل طلبي عبر واتساب',
+  'register.submit': 'أرسل طلبي',
   'register.error.required': 'اسم الحضانة والهاتف إلزاميان.',
   'register.success': 'شكراً! تابع المحادثة عبر واتساب لإتمام التسجيل.',
 
