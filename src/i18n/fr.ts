@@ -4,6 +4,7 @@ const fr = {
     "Aslef simplifie la gestion des crèches et rapproche les équipes des parents grâce à une application web et mobile simple et moderne.",
 
   // Navbar
+  'nav.home': 'Accueil',
   'nav.features': 'Fonctionnalités',
   'nav.forWho': 'Pour qui ?',
   'nav.app': "L'application",

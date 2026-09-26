@@ -4,14 +4,13 @@ import { Globe, Menu, X } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { Container } from './ui/Container';
 import { Button } from './ui/Button';
-import { APP_DOWNLOAD_URL } from '../lib/links';
 import logo from '../assets/logo.png';
 import type { TranslationKey } from '../i18n/fr';
 
 const NAV_LINKS: { key: TranslationKey; href: string }[] = [
+  { key: 'nav.home', href: '#top' },
   { key: 'nav.how', href: '#comment-ca-marche' },
   { key: 'nav.about', href: '#a-propos' },
-  { key: 'nav.register', href: '/inscription' },
   { key: 'nav.contact', href: '#contact' },
 ];
 
@@ -83,8 +82,8 @@ export function Navbar() {
             <a href={resolveHref('#contact')} className="text-[14.5px] font-semibold text-[var(--color-ink)] hover:text-[var(--color-aslef-blue)] transition-colors px-2">
               {t('nav.login')}
             </a>
-            <Button as="a" href={APP_DOWNLOAD_URL} size="md">
-              {t('nav.download')}
+            <Button as="a" href="/inscription" size="md">
+              {t('nav.register')}
             </Button>
           </div>
 
@@ -146,8 +145,8 @@ export function Navbar() {
                 {t('nav.login')}
               </a>
               <div className="mt-3 flex flex-col gap-2.5">
-                <Button as="a" href={APP_DOWNLOAD_URL} size="lg" className="w-full" onClick={() => setMobileOpen(false)}>
-                  {t('nav.download')}
+                <Button as="a" href="/inscription" size="lg" className="w-full" onClick={() => setMobileOpen(false)}>
+                  {t('nav.register')}
                 </Button>
               </div>
             </Container>

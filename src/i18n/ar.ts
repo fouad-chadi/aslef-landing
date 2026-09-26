@@ -6,6 +6,7 @@ const ar: Record<TranslationKey, string> = {
     'اسلاف يبسّط إدارة الحضانات ويقرّب المربيات والمديرات والأولياء في تطبيق واحد سهل وعصري.',
 
   // Navbar
+  'nav.home': 'الرئيسية',
   'nav.features': 'المميزات',
   'nav.forWho': 'لمن هذا التطبيق؟',
   'nav.app': 'التطبيق',
