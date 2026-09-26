@@ -229,7 +229,7 @@ export function Hero() {
           whileInView="visible"
           viewport={viewportOnce}
           variants={staggerContainer(0.1)}
-          className="mt-14 grid grid-cols-2 gap-6 rounded-[1.75rem] border border-[var(--color-border)] bg-white p-8 shadow-[var(--shadow-card)] sm:gap-8 lg:grid-cols-4"
+          className="mt-14 grid grid-cols-1 gap-6 rounded-[1.75rem] border border-[var(--color-border)] bg-white p-6 shadow-[var(--shadow-card)] sm:grid-cols-2 sm:gap-8 sm:p-8 lg:grid-cols-4"
         >
           {strip.map((item) => (
             <motion.div key={item.titleKey} variants={fadeInUp} className="group flex items-start gap-3.5">
