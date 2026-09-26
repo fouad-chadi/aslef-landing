@@ -5,17 +5,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { Container, Section } from './ui/Container';
 import { Button } from './ui/Button';
 import { fadeInUp, staggerContainer, viewportOnce } from '../lib/motion';
-import {
-  DEFAULT_CAPACITY,
-  ACCESS_OPTIONS,
-  PARENT_BASE_PRICE,
-  ACCESS_UPGRADE_PRICE,
-  pricePerAccount,
-  totalEstimate,
-  formatDA,
-  type Capacity,
-  type AccessCount,
-} from '../lib/pricing';
+import { DEFAULT_CAPACITY, ACCESS_OPTIONS, pricePerAccount, totalEstimate, formatDA, type Capacity, type AccessCount } from '../lib/pricing';
 
 const WHATSAPP_NUMBER = '213540176768';
 
@@ -89,7 +79,7 @@ export function Registration() {
           whileInView="visible"
           viewport={viewportOnce}
           variants={staggerContainer(0.08)}
-          className="mx-auto mt-10 grid max-w-[960px] grid-cols-1 gap-6 lg:grid-cols-2"
+          className="mx-auto mt-10 max-w-[560px]"
         >
           <motion.div variants={fadeInUp} className="rounded-[1.75rem] border border-[var(--color-border)] bg-white p-6 shadow-[var(--shadow-card)] sm:p-8">
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -156,69 +146,8 @@ export function Registration() {
                 ))}
               </div>
             </div>
-          </motion.div>
 
-          <motion.div variants={fadeInUp} className="flex flex-col rounded-[1.75rem] border border-[var(--color-border)] bg-white p-6 shadow-[var(--shadow-card)] sm:p-8">
-            <span className="inline-flex w-fit items-center gap-2 rounded-full bg-[var(--color-aslef-blue-light)] px-3.5 py-1.5 text-[12.5px] font-bold text-[var(--color-aslef-blue)]">
-              {t('register.subscription.badge')}
-            </span>
-            <h3 className="mt-4 text-[19px] font-bold text-[var(--color-ink)]">{t('register.subscription.title')}</h3>
-
-            <div className="mt-5 flex items-center justify-between border-b border-[var(--color-border)] pb-4 text-[14.5px]">
-              <span className="text-[var(--color-ink-soft)]">{t('register.field.capacity')}</span>
-              <span className="font-semibold text-[var(--color-ink)]">
-                {capacity} {t('register.capacity.suffix')}
-              </span>
-            </div>
-            <div className="flex items-center justify-between border-b border-[var(--color-border)] py-4 text-[14.5px]">
-              <span className="text-[var(--color-ink-soft)]">{t('register.field.access')}</span>
-              <span className="font-semibold text-[var(--color-ink)]">
-                {access} {t('register.access.suffix')}
-              </span>
-            </div>
-
-            <div className="mt-4 space-y-3">
-              <div className="flex items-center justify-between text-[14.5px]">
-                <span className="text-[var(--color-ink-soft)]">{t('register.pricing.parent.title')}</span>
-                <span className="font-semibold text-[var(--color-ink)]">
-                  {formatDA(PARENT_BASE_PRICE)} {t('register.pricing.perQuarter')}
-                </span>
-              </div>
-              {access === 4 && (
-                <div className="flex items-center justify-between text-[14.5px]">
-                  <span className="text-[var(--color-ink-soft)]">{t('register.pricing.access.title')}</span>
-                  <span className="font-semibold text-[var(--color-ink)]">
-                    +{formatDA(ACCESS_UPGRADE_PRICE)} {t('register.pricing.perQuarter')}
-                  </span>
-                </div>
-              )}
-              <div className="flex items-center justify-between border-t border-dashed border-[var(--color-border)] pt-3 text-[14.5px]">
-                <span className="text-[var(--color-ink-soft)]">{t('register.pricing.perAccount.title')}</span>
-                <span className="font-semibold text-[var(--color-ink)]">
-                  {formatDA(perAccount)} {t('register.pricing.perQuarter')}
-                </span>
-              </div>
-              <div className="flex items-center justify-between text-[14.5px]">
-                <span className="text-[var(--color-ink-soft)]">
-                  {t('register.pricing.multiplier.title')} × {capacity}
-                </span>
-              </div>
-              <div className="flex items-center justify-between text-[14.5px]">
-                <span className="text-[var(--color-ink-soft)]">{t('register.pricing.extraChild.title')}</span>
-                <span className="font-semibold text-[var(--color-ink)]">{t('register.pricing.extraChild.value')}</span>
-              </div>
-            </div>
-
-            <div className="mt-5 flex items-center justify-between rounded-2xl bg-[var(--color-bg-soft)] px-4 py-4">
-              <span className="text-[15px] font-bold text-[var(--color-ink)]">{t('register.pricing.total.title')}</span>
-              <span className="font-brand text-[22px] font-bold text-[var(--color-aslef-blue)]">
-                {formatDA(total)} {t('register.pricing.perQuarter')}
-              </span>
-            </div>
-
-            <p className="mt-3 text-[12.5px] leading-relaxed text-[var(--color-ink-soft)]">{t('register.pricing.note')}</p>
-
-            <div className="mt-auto pt-6">
+            <div className="mt-8">
               {error && <p className="mb-3 text-[13.5px] font-semibold text-red-500">{t('register.error.required')}</p>}
               {sent && (
                 <p className="mb-3 flex items-center gap-1.5 text-[13.5px] font-semibold text-[var(--color-aslef-green)]">
