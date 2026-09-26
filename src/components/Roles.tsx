@@ -143,7 +143,7 @@ export function Roles() {
           whileInView="visible"
           viewport={viewportOnce}
           variants={fadeInUp}
-          className="mt-10 flex flex-wrap items-center justify-center gap-3"
+          className="mt-10 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:items-center sm:justify-center"
         >
           {roles.map((role) => {
             const Icon = role.icon;
@@ -154,7 +154,7 @@ export function Roles() {
                 key={role.key}
                 type="button"
                 onClick={() => setActiveKey(role.key)}
-                className={`flex items-center gap-2 rounded-full px-5 py-2.5 text-[14.5px] font-bold transition-all duration-300 ${isActive ? s.tabActive : `${s.tabInactive} hover:brightness-95`}`}
+                className={`flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-[14.5px] font-bold transition-all duration-300 sm:justify-start ${isActive ? s.tabActive : `${s.tabInactive} hover:brightness-95`}`}
               >
                 <Icon size={17} aria-hidden />
                 {t(role.tabKey)}
