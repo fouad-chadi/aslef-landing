@@ -1,35 +1,18 @@
 import { MotionConfig } from 'framer-motion';
 import { LanguageProvider } from './context/LanguageContext';
 import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { TrustBar } from './components/TrustBar';
-import { ProblemSolution } from './components/ProblemSolution';
-import { Roles } from './components/Roles';
-import { Security } from './components/Security';
-import { HowItWorks } from './components/HowItWorks';
-import { About } from './components/About';
-import { FAQ } from './components/FAQ';
-import { Registration } from './components/Registration';
-import { FinalCTA } from './components/FinalCTA';
 import { Footer } from './components/Footer';
+import { HomePage } from './pages/HomePage';
+import { RegistrationPage } from './pages/RegistrationPage';
 
 function App() {
+  const isRegistrationPage = typeof window !== 'undefined' && window.location.pathname.replace(/\/$/, '') === '/inscription';
+
   return (
     <MotionConfig reducedMotion="user">
       <LanguageProvider>
         <Navbar />
-        <main>
-          <Hero />
-          <TrustBar />
-          <ProblemSolution />
-          <Roles />
-          <Security />
-          <HowItWorks />
-          <About />
-          <FAQ />
-          <Registration />
-          <FinalCTA />
-        </main>
+        {isRegistrationPage ? <RegistrationPage /> : <HomePage />}
         <Footer />
       </LanguageProvider>
     </MotionConfig>

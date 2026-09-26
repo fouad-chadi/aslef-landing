@@ -11,7 +11,7 @@ import type { TranslationKey } from '../i18n/fr';
 const NAV_LINKS: { key: TranslationKey; href: string }[] = [
   { key: 'nav.how', href: '#comment-ca-marche' },
   { key: 'nav.about', href: '#a-propos' },
-  { key: 'nav.register', href: '#inscription' },
+  { key: 'nav.register', href: '/inscription' },
   { key: 'nav.contact', href: '#contact' },
 ];
 
@@ -22,6 +22,11 @@ export function Navbar() {
   const prefersReducedMotion = useReducedMotion();
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 300, damping: 40, restDelta: 0.001 });
+
+  // Section anchors only exist on the home page - from any other page (e.g. /inscription),
+  // prefix them so the browser navigates home first instead of doing nothing.
+  const isHome = typeof window === 'undefined' || window.location.pathname.replace(/\/$/, '') !== '/inscription';
+  const resolveHref = (href: string) => (href.startsWith('#') && !isHome ? `/${href}` : href);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -46,7 +51,7 @@ export function Navbar() {
     >
       <Container>
         <nav className="flex h-[72px] items-center justify-between py-3.5" aria-label="Navigation principale">
-          <a href="#top" className="group flex items-center gap-2 shrink-0" aria-label="Aslef, accueil">
+          <a href={isHome ? '#top' : '/'} className="group flex items-center gap-2 shrink-0" aria-label="Aslef, accueil">
             <img src={logo} alt="Aslef" className="h-9 w-9 object-contain transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6" />
             <span className="font-brand text-xl font-semibold tracking-tight text-[var(--color-ink)]">Aslef</span>
           </a>
@@ -55,7 +60,7 @@ export function Navbar() {
             {NAV_LINKS.map((link) => (
               <li key={link.key}>
                 <a
-                  href={link.href}
+                  href={resolveHref(link.href)}
                   className="group relative rounded-full px-4 py-2 text-[14.5px] font-medium text-[var(--color-ink-soft)] transition-colors hover:bg-[var(--color-bg-soft)] hover:text-[var(--color-ink)]"
                 >
                   {t(link.key)}
@@ -75,7 +80,7 @@ export function Navbar() {
               <Globe size={15} aria-hidden />
               {lang === 'fr' ? 'AR' : 'FR'}
             </button>
-            <a href="#contact" className="text-[14.5px] font-semibold text-[var(--color-ink)] hover:text-[var(--color-aslef-blue)] transition-colors px-2">
+            <a href={resolveHref('#contact')} className="text-[14.5px] font-semibold text-[var(--color-ink)] hover:text-[var(--color-aslef-blue)] transition-colors px-2">
               {t('nav.login')}
             </a>
             <Button as="a" href={APP_DOWNLOAD_URL} size="md">
@@ -119,7 +124,7 @@ export function Navbar() {
               {NAV_LINKS.map((link) => (
                 <a
                   key={link.key}
-                  href={link.href}
+                  href={resolveHref(link.href)}
                   onClick={() => setMobileOpen(false)}
                   className="rounded-xl px-4 py-3.5 text-[17px] font-semibold text-[var(--color-ink)] hover:bg-[var(--color-bg-soft)]"
                 >
@@ -137,7 +142,7 @@ export function Navbar() {
                 <Globe size={18} aria-hidden />
                 {t('common.langSwitch')}
               </button>
-              <a href="#contact" onClick={() => setMobileOpen(false)} className="rounded-xl px-4 py-3.5 text-[17px] font-semibold text-[var(--color-ink)] hover:bg-[var(--color-bg-soft)]">
+              <a href={resolveHref('#contact')} onClick={() => setMobileOpen(false)} className="rounded-xl px-4 py-3.5 text-[17px] font-semibold text-[var(--color-ink)] hover:bg-[var(--color-bg-soft)]">
                 {t('nav.login')}
               </a>
               <div className="mt-3 flex flex-col gap-2.5">
