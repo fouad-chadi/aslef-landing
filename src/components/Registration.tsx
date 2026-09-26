@@ -1,14 +1,13 @@
-import { useMemo, useState, type FormEvent } from 'react';
+import { useState, type FormEvent } from 'react';
 import { motion } from 'framer-motion';
 import { UserPlus2, Check } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { Container, Section } from './ui/Container';
 import { Button } from './ui/Button';
 import { fadeInUp, staggerContainer, viewportOnce } from '../lib/motion';
-import { DEFAULT_CAPACITY, pricePerAccount, totalEstimate, formatDA, type Capacity } from '../lib/pricing';
+import { DEFAULT_CAPACITY, type Capacity } from '../lib/pricing';
 
 const WHATSAPP_NUMBER = '213562716833';
-const DEFAULT_ACCESS = 2;
 
 const inputClasses =
   'w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3 text-[15px] text-[var(--color-ink)] placeholder:text-[var(--color-ink-soft)]/60 transition-colors focus:border-[var(--color-aslef-blue)] focus:outline-none';
@@ -24,9 +23,6 @@ export function Registration() {
   const [capacity, setCapacity] = useState<Capacity>(DEFAULT_CAPACITY);
   const [error, setError] = useState(false);
   const [sent, setSent] = useState(false);
-
-  const perAccount = useMemo(() => pricePerAccount(DEFAULT_ACCESS), []);
-  const total = useMemo(() => totalEstimate(capacity, DEFAULT_ACCESS), [capacity]);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -45,7 +41,6 @@ export function Registration() {
       `👤 Responsable: ${[firstName, lastName].filter(Boolean).join(' ') || '-'}`,
       wilaya.trim() ? `📍 Wilaya: ${wilaya.trim()}` : null,
       `👨‍👩‍👧 Capacité: ${capacity} comptes parents`,
-      `💰 Offre estimée: ${formatDA(perAccount)} DA/compte × ${capacity} = ${formatDA(total)} DA / 3 mois`,
     ].filter((line): line is string => line !== null);
 
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`;
