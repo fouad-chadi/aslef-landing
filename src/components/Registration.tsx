@@ -5,9 +5,10 @@ import { useLanguage } from '../context/LanguageContext';
 import { Container, Section } from './ui/Container';
 import { Button } from './ui/Button';
 import { fadeInUp, staggerContainer, viewportOnce } from '../lib/motion';
-import { DEFAULT_CAPACITY, ACCESS_OPTIONS, pricePerAccount, totalEstimate, formatDA, type Capacity, type AccessCount } from '../lib/pricing';
+import { DEFAULT_CAPACITY, pricePerAccount, totalEstimate, formatDA, type Capacity } from '../lib/pricing';
 
-const WHATSAPP_NUMBER = '213540176768';
+const WHATSAPP_NUMBER = '213562716833';
+const DEFAULT_ACCESS = 2;
 
 const inputClasses =
   'w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3 text-[15px] text-[var(--color-ink)] placeholder:text-[var(--color-ink-soft)]/60 transition-colors focus:border-[var(--color-aslef-blue)] focus:outline-none';
@@ -21,12 +22,11 @@ export function Registration() {
   const [crechePhone, setCrechePhone] = useState('');
   const [wilaya, setWilaya] = useState('');
   const [capacity, setCapacity] = useState<Capacity>(DEFAULT_CAPACITY);
-  const [access, setAccess] = useState<AccessCount>(2);
   const [error, setError] = useState(false);
   const [sent, setSent] = useState(false);
 
-  const perAccount = useMemo(() => pricePerAccount(access), [access]);
-  const total = useMemo(() => totalEstimate(capacity, access), [capacity, access]);
+  const perAccount = useMemo(() => pricePerAccount(DEFAULT_ACCESS), []);
+  const total = useMemo(() => totalEstimate(capacity, DEFAULT_ACCESS), [capacity]);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -45,7 +45,6 @@ export function Registration() {
       `👤 Responsable: ${[firstName, lastName].filter(Boolean).join(' ') || '-'}`,
       wilaya.trim() ? `📍 Wilaya: ${wilaya.trim()}` : null,
       `👨‍👩‍👧 Capacité: ${capacity} comptes parents`,
-      `👥 Accès: ${access}`,
       `💰 Offre estimée: ${formatDA(perAccount)} DA/compte × ${capacity} = ${formatDA(total)} DA / 3 mois`,
     ].filter((line): line is string => line !== null);
 
@@ -124,27 +123,6 @@ export function Registration() {
                 onChange={(e) => setCapacity(Math.max(1, Number(e.target.value) || 1))}
                 className={inputClasses}
               />
-            </div>
-
-            <div className="mt-6">
-              <label className="mb-1.5 block text-[13px] font-semibold text-[var(--color-ink)]">{t('register.field.access')}</label>
-              <p className="mb-2.5 text-[12.5px] text-[var(--color-ink-soft)]">{t('register.field.access.help')}</p>
-              <div className="flex flex-wrap gap-2">
-                {ACCESS_OPTIONS.map((option) => (
-                  <button
-                    key={option}
-                    type="button"
-                    onClick={() => setAccess(option)}
-                    className={`rounded-full px-4 py-2 text-[14px] font-semibold transition-colors ${
-                      access === option
-                        ? 'bg-[var(--color-aslef-green)] text-white shadow-[var(--shadow-card)]'
-                        : 'bg-[var(--color-aslef-green-light)] text-[var(--color-aslef-green)] hover:brightness-95'
-                    }`}
-                  >
-                    {option} {t('register.access.suffix')}
-                  </button>
-                ))}
-              </div>
             </div>
 
             <div className="mt-8">
