@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { useInView, useMotionValue, useReducedMotion, useSpring } from 'framer-motion';
 
-/** Animates a number counting up from 0 once it scrolls into view. Falls back to the
- *  static target immediately when the user prefers reduced motion. */
+/** Animates a number counting up from 0 once it scrolls into view. Shows the target
+ *  immediately when the visitor prefers reduced motion. */
 export function CountUp({ to, prefix = '', suffix = '', className = '' }: { to: number; prefix?: string; suffix?: string; className?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.6 });

@@ -2,34 +2,70 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#1786CE" />
+    <!-- The prerendered HTML carries the scroll-reveal start state (opacity 0). Without JavaScript
+         nothing would ever reveal it, so show everything as-is. -->
+    <noscript>
+      <style>
+        #root [style*="opacity:0"], #root [style*="opacity: 0"] { opacity: 1 !important; transform: none !important; }
+      </style>
+    </noscript>
 
     <title>Aslef — La gestion de crèche, simplement</title>
     <meta
       name="description"
       content="Aslef simplifie la gestion des crèches et rapproche les équipes des parents grâce à une application web et mobile simple et moderne."
     />
+    <link rel="canonical" href="https://aslef.app/" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Aslef" />
+    <meta property="og:url" content="https://aslef.app/" />
     <meta property="og:title" content="Aslef — La gestion de crèche, simplement" />
     <meta
       property="og:description"
       content="Aslef simplifie la gestion des crèches et rapproche les équipes des parents grâce à une application web et mobile simple et moderne."
     />
-    <meta property="og:image" content="/favicon.png" />
+    <meta property="og:image" content="https://aslef.app/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Aslef — l'application qui relie la crèche et les parents" />
     <meta property="og:locale" content="fr_FR" />
+    <meta property="og:locale:alternate" content="ar_DZ" />
 
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Aslef — La gestion de crèche, simplement" />
     <meta
       name="twitter:description"
       content="Aslef simplifie la gestion des crèches et rapproche les équipes des parents grâce à une application web et mobile simple et moderne."
     />
-    <meta name="twitter:image" content="/favicon.png" />
-  </head>
+    <meta name="twitter:image" content="https://aslef.app/og-image.jpg" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Aslef",
+        "url": "https://aslef.app/",
+        "image": "https://aslef.app/og-image.jpg",
+        "description": "Application de gestion de crèche : présences, rapports quotidiens, photos, messagerie et paiements, avec un espace pour la gestionnaire, les éducatrices et les parents.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Android, Web",
+        "inLanguage": ["fr", "ar"],
+        "publisher": {
+          "@type": "Organization",
+          "name": "Aslef",
+          "url": "https://aslef.app/",
+          "logo": "https://aslef.app/apple-touch-icon.png",
+          "email": "contact@aslef.app",
+          "address": { "@type": "PostalAddress", "addressLocality": "Constantine", "addressCountry": "DZ" }
+        }
+      }
+    </script>
+    </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>

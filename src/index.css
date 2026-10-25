@@ -1,10 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Fredoka:wght@400;500;600;700&family=Sora:wght@700&display=swap');
+/* Fonts are self-hosted and loaded from src/fonts.ts (no third-party request). */
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  /* Display: section titles and the hero headline. Brand: the "Aslef" wordmark only. */
+  --font-display: "Sora", "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-hero: var(--font-display);
   --font-brand: "Fredoka", "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-hero: "Sora", "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
 
   /* Aslef brand identity - sourced from the product logo (parent + child forming an "A",
      blue-to-green gradient with a small yellow/orange heart). Blue and green are dominant;
@@ -17,14 +19,28 @@
   --color-aslef-green-light: #EAF8ED;
   --color-aslef-yellow: #FFB51B;
   --color-aslef-yellow-light: #FFF4DE;
-  --color-ink: #172B3A;
-  --color-ink-soft: #4B5D6B;
-  --color-bg-soft: #F8FBFD;
-  --color-white: #FFFFFF;
-  --color-border: #E3EBF0;
+  /* Yellow dark enough for text on light backgrounds (the brand yellow is not readable there). */
+  --color-aslef-yellow-ink: #8F5B00;
 
-  --shadow-card: 0 1px 2px rgba(23, 43, 58, 0.04), 0 8px 24px rgba(23, 43, 58, 0.06);
-  --shadow-card-lg: 0 4px 12px rgba(23, 43, 58, 0.06), 0 24px 48px rgba(23, 43, 58, 0.10);
+  --color-ink: #12273A;
+  --color-ink-soft: #4B5C6A;
+  --color-white: #FFFFFF;
+  /* Product screens (the demos) keep the app's cool palette... */
+  --color-bg-soft: #F6F9FB;
+  --color-border: #E3EBF0;
+  /* ...while the site itself sits on warm paper with warm hairlines. */
+  --color-paper: #FAF7F2;
+  --color-paper-deep: #F3EEE5;
+  --color-line: #E7E0D4;
+  /* Deep ink sections (security, final call to action). */
+  --color-night: #0F2232;
+  --color-night-soft: #18334A;
+
+  --shadow-card: 0 1px 2px rgba(18, 39, 58, 0.04), 0 8px 24px rgba(18, 39, 58, 0.06);
+  --shadow-card-lg: 0 4px 12px rgba(18, 39, 58, 0.06), 0 24px 48px rgba(18, 39, 58, 0.10);
+  --shadow-float: 0 2px 6px rgba(18, 39, 58, 0.05), 0 30px 60px -24px rgba(18, 39, 58, 0.28);
+
+  --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 html {
@@ -35,12 +51,29 @@ html[dir="rtl"] {
   direction: rtl;
 }
 
+/* Anchored sections land below the sticky header instead of under it. */
+section[id],
+[id="top"] {
+  scroll-margin-top: 80px;
+}
+
+/* Arabic: the Latin fonts have no Arabic glyphs. Tajawal (geometric, like Sora) carries both the
+   body and the display titles; Latin words inside Arabic text (Aslef, numbers) fall through to the
+   Latin fonts. */
+html[lang="ar"] {
+  --font-sans: "Tajawal", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Tajawal", "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-brand: "Fredoka", "Tajawal", ui-sans-serif, system-ui, sans-serif;
+}
+
 body {
   font-family: var(--font-sans);
   color: var(--color-ink);
-  background-color: var(--color-white);
+  background-color: var(--color-paper);
   -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
   overflow-x: hidden;
+  text-rendering: optimizeLegibility;
 }
 
 ::selection {
@@ -50,47 +83,116 @@ body {
 
 :focus-visible {
   outline: 2px solid var(--color-aslef-blue);
-  outline-offset: 2px;
-  border-radius: 4px;
+  outline-offset: 3px;
+  border-radius: 6px;
 }
 
+/* Display titles: tight tracking in Latin only (Arabic letters must never be squeezed). */
+.aslef-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+html[lang="ar"] .aslef-display {
+  letter-spacing: 0;
+  line-height: 1.3;
+}
+html[lang="ar"] .aslef-eyebrow {
+  letter-spacing: 0;
+  font-size: 13.5px;
+}
+.aslef-balance {
+  text-wrap: balance;
+}
+.aslef-pretty {
+  text-wrap: pretty;
+}
+
+/* Faint dot grid that fades out at the edges - the "signal" motif of the hero demo. */
+.aslef-dotgrid {
+  background-image: radial-gradient(rgba(18, 39, 58, 0.11) 1px, transparent 1.3px);
+  background-size: 22px 22px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 25%, transparent 75%);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 25%, transparent 75%);
+}
+.aslef-dotgrid-light {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1.3px);
+  background-size: 22px 22px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 30% 20%, #000 20%, transparent 70%);
+  mask-image: radial-gradient(ellipse 80% 70% at 30% 20%, #000 20%, transparent 70%);
+}
+
+/* Soft expanding ring used to invite a click on the live demos. */
+@keyframes aslef-ring {
+  0% { box-shadow: 0 0 0 0 rgba(23, 134, 206, 0.45); }
+  70% { box-shadow: 0 0 0 10px rgba(23, 134, 206, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(23, 134, 206, 0); }
+}
+.aslef-ring {
+  animation: aslef-ring 1.8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+/* Device mockups are designed at a fixed size and zoomed to fit (zoom changes layout size, so
+   nothing overflows and no height hacks are needed).
+   - .aslef-device-zoom: one phone (248px wide).
+   - .aslef-zoom-wide: the two-phone hero demo or the browser window (~520px wide). Steps are
+     chosen so the device always fits the viewport minus the 20px page gutters. */
+.aslef-device-zoom { zoom: 0.66; }
+@media (min-width: 400px) { .aslef-device-zoom { zoom: 0.76; } }
+@media (min-width: 640px) { .aslef-device-zoom { zoom: 0.92; } }
+@media (min-width: 1024px) { .aslef-device-zoom { zoom: 1; } }
+
+.aslef-zoom-wide { zoom: 0.54; }
+@media (min-width: 360px) { .aslef-zoom-wide { zoom: 0.61; } }
+@media (min-width: 375px) { .aslef-zoom-wide { zoom: 0.64; } }
+@media (min-width: 390px) { .aslef-zoom-wide { zoom: 0.67; } }
+@media (min-width: 412px) { .aslef-zoom-wide { zoom: 0.71; } }
+@media (min-width: 440px) { .aslef-zoom-wide { zoom: 0.76; } }
+@media (min-width: 480px) { .aslef-zoom-wide { zoom: 0.83; } }
+@media (min-width: 540px) { .aslef-zoom-wide { zoom: 0.92; } }
+@media (min-width: 600px) { .aslef-zoom-wide { zoom: 1; } }
+/* Small laptops (1024-1279px): two-column sections are narrower than the devices. */
+@media (min-width: 1024px) and (max-width: 1279.98px) {
+  .aslef-zoom-wide { zoom: 0.84; }
+}
+
+/* Day story: inactive steps fade back. html.js is set by main.tsx, so the
+   prerendered page (and a visit without JavaScript) shows every step at full strength. */
+@media (min-width: 1024px) {
+  html.js .aslef-dim { opacity: 0.35; }
+}
+/* Phones and tablets: a gentler fade, so text stays comfortably readable while it is off-centre. */
+@media (max-width: 1023.98px) {
+  html.js .aslef-dim { opacity: 0.6; }
+}
+
+/* Lift on hover only where a real pointer can hover; touch gets a pressed state instead. */
+.aslef-lift {
+  transition: transform 0.4s var(--ease-out-soft), box-shadow 0.4s var(--ease-out-soft), border-color 0.3s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .aslef-lift:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-card-lg);
+  }
+}
+.aslef-lift:active {
+  transform: translateY(0) scale(0.99);
+}
+
+/* Visitors who asked their device for less motion: loops stop, smooth scrolling is off.
+   Framer Motion (MotionConfig reducedMotion="user") keeps the fades but drops the movement. */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-    scroll-behavior: auto !important;
+  .aslef-ring,
+  .animate-pulse {
+    animation: none;
   }
-}
-
-.aslef-gradient-text {
-  background: linear-gradient(90deg, var(--color-aslef-blue), var(--color-aslef-green), var(--color-aslef-blue));
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: aslef-shimmer 6s ease-in-out infinite;
-}
-
-@keyframes aslef-shimmer {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-@keyframes aslef-drift {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(18px, -14px) scale(1.06); }
-}
-
-.aslef-card-hover {
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.aslef-card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-card-lg);
+  .aslef-lift,
+  .aslef-lift:hover {
+    transition: none;
+    transform: none;
+  }
 }

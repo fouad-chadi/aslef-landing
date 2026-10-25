@@ -6,7 +6,8 @@ import type { TranslationKey } from '../i18n/fr';
 type Lang = 'fr' | 'ar';
 
 const DICTS: Record<Lang, Record<TranslationKey, string>> = { fr, ar };
-const STORAGE_KEY = 'aslef_landing_lang';
+export const LANG_STORAGE_KEY = 'aslef_landing_lang';
+const STORAGE_KEY = LANG_STORAGE_KEY;
 
 interface LanguageContextValue {
   lang: Lang;
@@ -20,8 +21,11 @@ const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 function readInitialLang(): Lang {
   if (typeof window === 'undefined') return 'fr';
-  const stored = window.localStorage.getItem(STORAGE_KEY);
-  return stored === 'ar' ? 'ar' : 'fr';
+  try {
+    return window.localStorage.getItem(STORAGE_KEY) === 'ar' ? 'ar' : 'fr';
+  } catch {
+    return 'fr';
+  }
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
@@ -35,7 +39,11 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   const setLang = useCallback((next: Lang) => {
     setLangState(next);
-    window.localStorage.setItem(STORAGE_KEY, next);
+    try {
+      window.localStorage.setItem(STORAGE_KEY, next);
+    } catch {
+      // Private mode or blocked storage: the choice simply isn't remembered.
+    }
   }, []);
 
   const toggleLang = useCallback(() => {

@@ -2,7 +2,8 @@ import { motion } from 'framer-motion';
 import { ShieldCheck, Building2, Users, Lock, SlidersHorizontal } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { Container, Section } from './ui/Container';
-import { fadeInUp, staggerContainer, viewportOnce } from '../lib/motion';
+import { SectionHeading } from './ui/Heading';
+import { revealItem } from '../lib/motion';
 import type { TranslationKey } from '../i18n/fr';
 
 const items: { icon: typeof ShieldCheck; titleKey: TranslationKey; descKey: TranslationKey }[] = [
@@ -13,41 +14,56 @@ const items: { icon: typeof ShieldCheck; titleKey: TranslationKey; descKey: Tran
   { icon: ShieldCheck, titleKey: 'security.item.permissions', descKey: 'security.item.permissionsDesc' },
 ];
 
+/** Privacy, on deep ink: the one dark section of the page, so it reads as a change of register. */
 export function Security() {
   const { t } = useLanguage();
 
   return (
-    <Section background="brand" className="relative overflow-hidden">
-      <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_0%,rgba(255,255,255,0.14),transparent)]" />
-      <Container className="relative">
-        <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={fadeInUp} className="mx-auto max-w-[640px] text-center">
-          <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-white/15 text-white">
-            <ShieldCheck size={22} aria-hidden />
-          </span>
-          <h2 className="mt-5 text-[26px] sm:text-[34px] font-brand font-semibold tracking-tight text-white">{t('security.headline')}</h2>
-          <p className="mt-3 text-[15.5px] text-white/85">{t('security.sub')}</p>
-        </motion.div>
+    <Section background="night" className="relative overflow-hidden !py-14 sm:!py-16 lg:!py-20">
+      <div aria-hidden className="aslef-dotgrid-light pointer-events-none absolute inset-0" />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -start-40 -top-40 h-[620px] w-[620px] rounded-full bg-[radial-gradient(circle,rgba(23,134,206,0.32),transparent_65%)]"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-56 -end-40 h-[560px] w-[560px] rounded-full bg-[radial-gradient(circle,rgba(69,184,90,0.18),transparent_65%)]"
+      />
 
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOnce}
-          variants={staggerContainer(0.1)}
-          className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
-        >
-          {items.map((item) => {
-            const Icon = item.icon;
-            return (
-              <motion.div key={item.titleKey} variants={fadeInUp} className="rounded-2xl border border-white/15 bg-white/10 p-6 backdrop-blur-sm">
-                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/15 text-white">
-                  <Icon size={18} aria-hidden />
-                </span>
-                <h3 className="mt-4 text-[15.5px] font-bold text-white">{t(item.titleKey)}</h3>
-                <p className="mt-1.5 text-[13.5px] leading-relaxed text-white/80">{t(item.descKey)}</p>
-              </motion.div>
-            );
-          })}
-        </motion.div>
+      <Container className="relative">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-14">
+          <div className="lg:col-span-5">
+            <div className="lg:sticky lg:top-28">
+              <motion.span
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,var(--color-aslef-blue),var(--color-aslef-green))] text-white shadow-[0_14px_30px_-12px_rgba(23,134,206,0.8)] lg:mx-0"
+              >
+                <ShieldCheck size={26} aria-hidden />
+              </motion.span>
+              <SectionHeading align="split" tone="light" eyebrow={t('security.badge')} title={t('security.headline')} sub={t('security.sub')} />
+            </div>
+          </div>
+
+          <ul className="grid grid-cols-1 gap-x-8 sm:grid-cols-2 lg:col-span-7">
+            {items.map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <motion.li key={item.titleKey} {...revealItem(i, 1)} className="flex gap-4 border-b border-white/10 py-4 sm:py-5">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/[0.07] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.12)]">
+                    <Icon size={19} aria-hidden />
+                  </span>
+                  <div>
+                    <h3 className="text-[16px] font-bold text-white">{t(item.titleKey)}</h3>
+                    <p className="aslef-pretty mt-1 text-[14px] leading-relaxed text-white/70">{t(item.descKey)}</p>
+                  </div>
+                </motion.li>
+              );
+            })}
+          </ul>
+        </div>
       </Container>
     </Section>
   );

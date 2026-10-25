@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion';
-import { Users2, Heart, Rocket, HeartHandshake } from 'lucide-react';
+import { Users2, Heart, Rocket, HeartHandshake, Check } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { Container, Section } from './ui/Container';
+import logo from '../assets/logo.png';
 import { fadeInUp, staggerContainer, viewportOnce } from '../lib/motion';
 import type { TranslationKey } from '../i18n/fr';
 
-const crechePhoto = '/creche.jpeg';
+const facts: TranslationKey[] = ['about.fact.1', 'about.fact.2', 'how.free.title'];
 
 const values: { icon: typeof Heart; titleKey: TranslationKey; descKey: TranslationKey }[] = [
   { icon: Heart, titleKey: 'about.value.passion.title', descKey: 'about.value.passion.desc' },
@@ -63,17 +64,22 @@ export function About() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="relative mx-auto w-full max-w-[460px]"
           >
-            <div className="overflow-hidden rounded-[2rem] shadow-[var(--shadow-card-lg)] aspect-[4/3]">
-              <img src={crechePhoto} alt="Équipe éducative avec des enfants à la crèche" className="h-full w-full object-cover" loading="lazy" />
-            </div>
-
-            <div className="absolute -bottom-6 left-1/2 w-[88%] -translate-x-1/2 rounded-2xl border border-[var(--color-border)] bg-white/95 px-5 py-4 shadow-[var(--shadow-card)] backdrop-blur">
-              <div className="flex items-center gap-3">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--color-aslef-blue-light)] text-[var(--color-aslef-blue)]">
-                  <HeartHandshake size={18} aria-hidden />
-                </span>
-                <p className="text-[13.5px] font-semibold text-[var(--color-ink)]">{t('about.quote')}</p>
-              </div>
+            <div className="rounded-[2rem] border border-[var(--color-line)] bg-[linear-gradient(160deg,var(--color-aslef-blue-light),#fff_55%,var(--color-aslef-green-light))] p-8 shadow-[var(--shadow-card-lg)] sm:p-10">
+              <img src={logo} alt="Aslef" width={72} height={72} className="h-[72px] w-[72px] object-contain" loading="lazy" />
+              <p className="aslef-display mt-5 flex items-start gap-3 text-[19px] font-bold leading-snug text-[var(--color-ink)]">
+                <HeartHandshake size={22} aria-hidden className="mt-0.5 shrink-0 text-[var(--color-aslef-blue)]" />
+                {t('about.quote')}
+              </p>
+              <ul className="mt-6 space-y-3">
+                {facts.map((key) => (
+                  <li key={key} className="flex items-center gap-3 text-[14.5px] font-medium text-[var(--color-ink)]">
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--color-aslef-green)] text-white">
+                      <Check size={13} strokeWidth={3} aria-hidden />
+                    </span>
+                    {t(key)}
+                  </li>
+                ))}
+              </ul>
             </div>
           </motion.div>
         </div>

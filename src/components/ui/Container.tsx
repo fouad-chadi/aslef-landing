@@ -11,13 +11,15 @@ export function Container({ children, className = '', ...rest }: HTMLAttributes<
 interface SectionProps extends HTMLAttributes<HTMLElement> {
   children: ReactNode;
   id?: string;
-  background?: 'white' | 'soft' | 'brand';
+  /** 'soft' is kept as an alias of 'paper' for older sections. */
+  background?: 'white' | 'paper' | 'soft' | 'night';
 }
 
 const backgrounds: Record<NonNullable<SectionProps['background']>, string> = {
   white: 'bg-white',
-  soft: 'bg-[var(--color-bg-soft)]',
-  brand: 'bg-[linear-gradient(135deg,var(--color-aslef-blue),var(--color-aslef-green))]',
+  paper: 'bg-[var(--color-paper)]',
+  soft: 'bg-[var(--color-paper)]',
+  night: 'bg-[var(--color-night)] text-white',
 };
 
 export function Section({ children, id, background = 'white', className = '', ...rest }: SectionProps) {
