@@ -109,6 +109,8 @@ const fr = {
   'security.item.privacyDesc': 'Les échanges entre la crèche et une famille restent visibles uniquement par les personnes concernées.',
   'security.item.permissions': 'Contrôle des permissions',
   'security.item.permissionsDesc': "La gestionnaire garde la main sur qui peut faire quoi au sein de la crèche.",
+  'security.item.hosting': 'Hébergement en Algérie',
+  'security.item.hostingDesc': "Les données d'Aslef sont hébergées sur un serveur VPS situé en Algérie.",
 
   // How to get started
   'how.badge': 'Comment démarrer',

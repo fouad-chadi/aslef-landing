@@ -108,6 +108,8 @@ const ar: Record<TranslationKey, string> = {
   'security.item.privacyDesc': 'المحادثات بين الحضانة والعائلة تبقى مرئية فقط من طرف المعنيين.',
   'security.item.permissions': 'التحكم في الصلاحيات',
   'security.item.permissionsDesc': 'تبقى المديرة متحكمة في من يمكنه فعل ماذا داخل الحضانة.',
+  'security.item.hosting': 'استضافة في الجزائر',
+  'security.item.hostingDesc': 'بيانات اسلاف مستضافة على خادم VPS موجود في الجزائر.',
 
   // How to get started
   'how.badge': 'كيف تبدأون',

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ShieldCheck, Building2, Users, Lock, SlidersHorizontal } from 'lucide-react';
+import { ShieldCheck, Building2, Users, Lock, SlidersHorizontal, Server } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { Container, Section } from './ui/Container';
 import { SectionHeading } from './ui/Heading';
@@ -12,6 +12,7 @@ const items: { icon: typeof ShieldCheck; titleKey: TranslationKey; descKey: Tran
   { icon: Users, titleKey: 'security.item.linked', descKey: 'security.item.linkedDesc' },
   { icon: Lock, titleKey: 'security.item.privacy', descKey: 'security.item.privacyDesc' },
   { icon: ShieldCheck, titleKey: 'security.item.permissions', descKey: 'security.item.permissionsDesc' },
+  { icon: Server, titleKey: 'security.item.hosting', descKey: 'security.item.hostingDesc' },
 ];
 
 /** Privacy, on deep ink: the one dark section of the page, so it reads as a change of register. */
