@@ -13,7 +13,6 @@ const NAV_LINKS: { key: TranslationKey; id: string }[] = [
   { key: 'nav.forWho', id: 'pour-qui' },
   { key: 'nav.how', id: 'comment-ca-marche' },
   { key: 'nav.day', id: 'journee' },
-  { key: 'nav.faq', id: 'faq' },
   { key: 'nav.contact', id: 'contact' },
 ];
 

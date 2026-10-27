@@ -8,7 +8,6 @@ import { DemoVideo } from '../components/DemoVideo';
 import { Security } from '../components/Security';
 import { HowItWorks } from '../components/HowItWorks';
 import { About } from '../components/About';
-import { FAQ } from '../components/FAQ';
 import { FinalCTA } from '../components/FinalCTA';
 
 export function HomePage() {
@@ -49,7 +48,6 @@ export function HomePage() {
       <DemoVideo />
       <Security />
       <About />
-      <FAQ />
       <ClientLogos />
       <FinalCTA />
     </main>

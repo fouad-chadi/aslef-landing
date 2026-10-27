@@ -30,7 +30,6 @@ export function Footer({ path = '/' }: { path?: string }) {
         { key: 'footer.link.educator', href: anchor('pour-qui'), role: 'educator' },
         { key: 'footer.link.parent', href: anchor('pour-qui'), role: 'parent' },
         { key: 'nav.about', href: anchor('a-propos') },
-        { key: 'nav.faq', href: anchor('faq') },
         { key: 'nav.contact', href: anchor('contact') },
       ],
     },

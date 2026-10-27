@@ -13,7 +13,6 @@ const fr = {
   'nav.forWho': 'Pour qui ?',
   'nav.how': 'Démarrer',
   'nav.about': 'À propos',
-  'nav.faq': 'FAQ',
   'nav.contact': 'Contact',
   'nav.login': 'Se connecter',
   'nav.menuOpen': 'Ouvrir le menu',
@@ -126,40 +125,6 @@ const fr = {
   'how.free.title': 'Gratuit pour la crèche et son équipe.',
   'how.free.desc': 'La gestionnaire et les éducatrices utilisent Aslef sans frais.',
   'how.ctaNote': 'Inscription via WhatsApp',
-
-  // FAQ
-  'faq.headline': 'Questions fréquentes',
-  'faq.q.devices': 'Aslef fonctionne-t-il sur mobile et sur iPhone ?',
-  'faq.q.daily': 'Comment fonctionnent les rapports, les messages et le menu de la semaine ?',
-  'faq.q1': 'Aslef fonctionne-t-il sur mobile ?',
-  'faq.a1':
-    "Oui. Aslef est disponible en application mobile pour les éducatrices, les gestionnaires et les parents, ainsi qu'en application web pour la gestion complète de la crèche.",
-  'faq.q2': 'Qui peut utiliser Aslef ?',
-  'faq.a2':
-    "Aslef est conçu pour quatre profils : les gestionnaires de crèche, les éducatrices, les parents et les accompagnatrices du transport. Chacun retrouve un espace adapté à son rôle.",
-  'faq.q3': 'Les parents peuvent-ils suivre plusieurs enfants ?',
-  'faq.a3':
-    "Oui. Un compte parent peut être lié à plusieurs enfants et suivre le rapport quotidien de chacun d'eux séparément.",
-  'faq.q4': 'Les éducatrices peuvent-elles faire les rapports quotidiens ?',
-  'faq.a4':
-    "Oui, c'est l'une des fonctionnalités principales pour les éducatrices : humeur, appétit, sieste, participation et notes, directement depuis l'application.",
-  'faq.q5': 'Les parents peuvent-ils recevoir des messages ?',
-  'faq.a5':
-    "Oui. La messagerie permet un échange direct et privé entre la crèche et chaque famille, sans passer par des groupes externes.",
-  'faq.q6': 'Le menu de la semaine est-il visible par les parents ?',
-  'faq.a6':
-    "Oui. Une fois publié par la gestionnaire, le menu de la semaine est immédiatement visible par les familles concernées.",
-  'faq.q7': 'Aslef fonctionne-t-il en arabe ?',
-  'faq.a7': "Oui. Aslef est disponible en français et en arabe, avec une interface adaptée à la lecture de droite à gauche.",
-  'faq.q8': 'Comment démarrer avec Aslef ?',
-  'faq.a8':
-    "Pour une crèche : remplissez le formulaire d'inscription, nous vous recontactons sur WhatsApp et créons l'espace de votre crèche. Pour les parents et l'équipe : téléchargez l'application Android depuis ce site, ou ouvrez app.aslef.app, puis connectez-vous avec les identifiants remis par la crèche.",
-  'faq.q9': 'Aslef est-il gratuit pour la crèche ?',
-  'faq.a9':
-    "Oui. La crèche et son équipe — gestionnaire et éducatrices — utilisent Aslef gratuitement. Les modalités d'accès des parents vous sont présentées lors de l'inscription.",
-  'faq.q10': 'Aslef fonctionne-t-il sur iPhone ?',
-  'faq.a10':
-    "Oui, grâce à l'application web : ouvrez app.aslef.app dans le navigateur de l'iPhone et connectez-vous. Sur Android, l'application se télécharge directement depuis ce site.",
 
   // About
   'about.badge': 'À propos de nous',
