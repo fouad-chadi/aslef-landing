@@ -10,7 +10,7 @@ import { DEFAULT_CAPACITY, type Capacity } from '../lib/pricing';
 import { fadeInUp, staggerContainer } from '../lib/motion';
 import type { TranslationKey } from '../i18n/fr';
 
-const WHATSAPP_NUMBER = '213562716833';
+const WHATSAPP_NUMBER = '213698115222';
 
 const inputClasses =
   'w-full min-h-12 rounded-xl border border-[var(--color-line)] bg-white px-4 py-3 text-[16px] text-[var(--color-ink)] placeholder:text-[var(--color-ink-soft)]/60 transition-[border-color,box-shadow] focus:border-[var(--color-aslef-blue)] focus:shadow-[0_0_0_4px_rgba(23,134,206,0.12)] focus:outline-none aria-[invalid=true]:border-[#C24A3A]';
