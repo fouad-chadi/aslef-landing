@@ -99,6 +99,7 @@ const fr = {
   'security.badge': 'Confidentialité',
   'security.headline': 'Les informations de chaque enfant restent privées.',
   'security.sub': "La confidentialité fait partie de la conception d'Aslef, pas une option ajoutée après coup.",
+  'security.law': 'Loi algérienne n° 18-07',
   'security.item.roles': 'Accès selon le rôle',
   'security.item.rolesDesc': 'Chaque utilisateur ne voit que ce qui correspond à son rôle : gestionnaire, éducatrice ou parent.',
   'security.item.isolation': 'Données isolées par crèche',
@@ -110,7 +111,7 @@ const fr = {
   'security.item.permissions': 'Contrôle des permissions',
   'security.item.permissionsDesc': "La gestionnaire garde la main sur qui peut faire quoi au sein de la crèche.",
   'security.item.hosting': 'Hébergement en Algérie',
-  'security.item.hostingDesc': "Les données d'Aslef sont hébergées sur un serveur VPS situé en Algérie.",
+  'security.item.hostingDesc': "Les données d'Aslef sont hébergées sur un serveur VPS situé en Algérie, selon la loi 18-07.",
 
   // How to get started
   'how.badge': 'Comment démarrer',

@@ -45,6 +45,7 @@ export function Security() {
                 <ShieldCheck size={26} aria-hidden />
               </motion.span>
               <SectionHeading align="split" tone="light" eyebrow={t('security.badge')} title={t('security.headline')} sub={t('security.sub')} />
+              <p className="aslef-pretty mt-5 text-center text-[13px] leading-relaxed text-white/55 lg:text-start">{t('security.law')}</p>
             </div>
           </div>
 

@@ -98,6 +98,7 @@ const ar: Record<TranslationKey, string> = {
   'security.badge': 'الخصوصية',
   'security.headline': 'معلومات كل طفل تبقى خاصة.',
   'security.sub': 'الخصوصية جزء من تصميم اسلاف منذ البداية، وليست خياراً أُضيف لاحقاً.',
+  'security.law': 'القانون الجزائري رقم 18-07',
   'security.item.roles': 'الوصول حسب الدور',
   'security.item.rolesDesc': 'كل مستخدم يرى فقط ما يتوافق مع دوره: مديرة، مربية أو ولي.',
   'security.item.isolation': 'بيانات معزولة لكل حضانة',
@@ -109,7 +110,7 @@ const ar: Record<TranslationKey, string> = {
   'security.item.permissions': 'التحكم في الصلاحيات',
   'security.item.permissionsDesc': 'تبقى المديرة متحكمة في من يمكنه فعل ماذا داخل الحضانة.',
   'security.item.hosting': 'استضافة في الجزائر',
-  'security.item.hostingDesc': 'بيانات اسلاف مستضافة على خادم VPS موجود في الجزائر.',
+  'security.item.hostingDesc': 'بيانات اسلاف مستضافة على خادم VPS موجود في الجزائر، وفق القانون 18-07.',
 
   // How to get started
   'how.badge': 'كيف تبدأون',
