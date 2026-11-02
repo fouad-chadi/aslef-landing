@@ -393,7 +393,7 @@ const fr = {
   "pre.err.network": "Envoi impossible : vérifiez votre connexion et réessayez. Vos informations sont conservées.",
   "pre.err.server": "Une erreur est survenue. Réessayez dans un moment.",
   "pre.done.title": "Demande envoyée",
-  "pre.done.body": "Merci ! La crèche va vérifier votre demande puis créer votre espace famille. Vous serez contacté(e) au numéro indiqué.",
+  "pre.done.body": "Merci ! La crèche va vérifier votre demande puis créer votre espace famille. Nous vous enverrons vos coordonnées de connexion (identifiant, mot de passe…) sur WhatsApp depuis le numéro ASLEF +213 698 11 52 22.",
   "pre.done.ref": "Votre référence",
   "pre.done.keep": "Conservez cette référence.",
   "pre.done.home": "Retour à l'accueil",

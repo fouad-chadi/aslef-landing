@@ -96,7 +96,6 @@ export function PreRegistration() {
   const [consentError, setConsentError] = useState(false);
   const [website, setWebsite] = useState(''); // honeypot
   const [sending, setSending] = useState(false);
-  const [reference, setReference] = useState<string | null>(null);
 
   const headingRef = useRef<HTMLHeadingElement>(null);
   const firstRender = useRef(true);
@@ -222,8 +221,7 @@ export function PreRegistration() {
     setFormError(null);
     setSending(true);
     try {
-      const ref = await submitPreinscription({ crecheToken, parent, children, locale: lang, consent, website });
-      setReference(ref);
+      await submitPreinscription({ crecheToken, parent, children, locale: lang, consent, website });
       // The request is stored server-side: drop the health information from this browser's memory.
       setChildren([]);
       setParent(emptyParent());
@@ -729,13 +727,6 @@ export function PreRegistration() {
                       {t('pre.done.title')}
                     </h2>
                     <p className="mx-auto mt-3 max-w-[460px] text-[16px] leading-relaxed text-[var(--color-ink-soft)]">{t('pre.done.body')}</p>
-                    <div className="mx-auto mt-6 max-w-[320px] rounded-2xl bg-[var(--color-paper)] px-5 py-4">
-                      <p className="text-[13px] font-semibold text-[var(--color-ink-soft)]">{t('pre.done.ref')}</p>
-                      <p dir="ltr" className="aslef-display mt-1 text-[26px] font-bold tracking-wider text-[var(--color-ink)]">
-                        {reference}
-                      </p>
-                      <p className="mt-1 text-[13px] text-[var(--color-ink-soft)]">{t('pre.done.keep')}</p>
-                    </div>
                     <div className="mt-8">
                       <Button as="a" href="/" size="lg">
                         {t('pre.done.home')}
