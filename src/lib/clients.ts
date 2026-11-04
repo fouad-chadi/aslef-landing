@@ -16,4 +16,5 @@ export const CLIENT_CRECHES: ClientCreche[] = [
   { name: 'Palais des Princes', logo: '/clients/palais-des-princes.webp', original: '/plais des princes.jpg', width: 256, height: 253 },
   // The name is the Arabic one written on the logo (Rawdat Sama Al-Anjum).
   { name: 'روضة سما الأنجم', logo: '/clients/sama-al-anjum.webp', original: '/clients/SAMAA ANJOM.jpg', width: 256, height: 256 },
+  { name: 'Sky Kids Garden', logo: '/clients/sky-kids-garden.webp', original: '/clients/sky kids garden.jpg', width: 256, height: 256 },
 ];

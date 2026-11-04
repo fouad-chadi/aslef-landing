@@ -56,11 +56,12 @@ export function ClientLogos() {
           <p className="aslef-pretty mx-auto mt-4 max-w-[520px] text-[16px] text-[var(--color-ink-soft)] sm:text-[18px]">{t('clients.sub')}</p>
         </motion.div>
 
-        <ul className="mx-auto mt-10 grid max-w-[1040px] grid-cols-2 gap-3 sm:mt-14 sm:grid-cols-4 sm:gap-5 lg:gap-6">
+        <ul className="mx-auto mt-10 flex max-w-[1040px] flex-wrap justify-center gap-3 sm:mt-14 sm:gap-5 lg:gap-6">
           {CLIENT_CRECHES.map((client, i) => (
             <motion.li
               key={client.name}
               {...revealItem(i, 4, 0.08)}
+              className="w-[calc(50%-0.375rem)] sm:w-[calc(25%-0.9375rem)] lg:w-[calc(25%-1.125rem)]"
             >
               <div className="aslef-lift group flex flex-col items-center gap-3 rounded-[1.25rem] border border-[var(--color-line)]/70 bg-white px-2 py-5 shadow-[0_10px_30px_-18px_rgba(18,39,58,0.25)] sm:gap-5 sm:rounded-[1.75rem] sm:px-4 sm:py-8 h-full">
                 <div className="overflow-hidden rounded-[18px] bg-white shadow-[0_0_0_1px_var(--color-line),0_10px_24px_-12px_rgba(18,39,58,0.35)] sm:rounded-[28px]">
