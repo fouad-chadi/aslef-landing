@@ -26,7 +26,7 @@ const fr = {
   'cta.sub': 'Découvrez une nouvelle façon de gérer votre crèche et de rester proche des familles.',
 
   // Hero
-  'hero.headline': 'Aslef, une nouvelle façon de vivre la crèche.',
+  'hero.headline': 'Aslef, la sérénité au quotidien.',
   'hero.sub':
     "Aslef simplifie la gestion de votre crèche et rapproche les équipes des parents, dans une seule application mobile et web.",
   'hero.badge': 'Bienvenue sur Aslef',
