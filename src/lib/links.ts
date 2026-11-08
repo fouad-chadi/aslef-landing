@@ -9,8 +9,7 @@ export const APP_DOWNLOAD_URL = 'https://aslef.app/download';
 // the user to log in first) are the legal pages linked from the footer.
 export const WEB_APP_URL = 'https://app.aslef.app';
 export const WEB_APP_LABEL = 'app.aslef.app';
-// The public privacy policy lives on this site (/privacy); the app keeps its own copy at app.aslef.app/privacy.
-export const PRIVACY_URL = '/privacy';
+export const PRIVACY_URL = 'https://app.aslef.app/privacy';
 export const DELETE_ACCOUNT_URL = 'https://app.aslef.app/delete-account';
 
 // Demo video. The "Découvrez Aslef en vidéo" section stays hidden until DEMO_VIDEO_URL is set.

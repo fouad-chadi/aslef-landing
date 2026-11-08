@@ -19,7 +19,7 @@ const linkClass =
 export function Footer({ path = '/' }: { path?: string }) {
   const { t, lang, toggleLang } = useLanguage();
   // Section anchors live on the home page: from /inscription they must go home first.
-  const isHome = !['/inscription', '/preinscription', '/privacy'].includes(path.replace(/\/$/, ''));
+  const isHome = !['/inscription', '/preinscription'].includes(path.replace(/\/$/, ''));
   const anchor = (id: string) => (isHome ? `#${id}` : `/#${id}`);
 
   const columns: { titleKey: TranslationKey; links: { key: TranslationKey; href: string; role?: RoleKey }[] }[] = [

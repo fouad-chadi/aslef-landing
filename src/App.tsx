@@ -7,18 +7,16 @@ import { HomePage } from './pages/HomePage';
 import type { TranslationKey } from './i18n/fr';
 import { RegistrationPage } from './pages/RegistrationPage';
 import { PreRegistrationPage } from './pages/PreRegistrationPage';
-import { PrivacyPage } from './pages/PrivacyPage';
 
 /** Keeps the tab title and meta description in the visitor's language. The prerendered HTML
  *  carries the French values (scripts/prerender.mjs), so French visitors see no change. */
-function DocumentMeta({ page }: { page: 'home' | 'register' | 'pre' | 'privacy' }) {
+function DocumentMeta({ page }: { page: 'home' | 'register' | 'pre' }) {
   const { t } = useLanguage();
   useEffect(() => {
     const [title, description] = {
       home: ['meta.title', 'meta.description'],
       register: ['meta.register.title', 'meta.register.description'],
       pre: ['meta.pre.title', 'meta.pre.description'],
-      privacy: ['meta.privacy.title', 'meta.privacy.description'],
     }[page] as [TranslationKey, TranslationKey];
     document.title = t(title);
     document.querySelector('meta[name="description"]')?.setAttribute('content', t(description));
@@ -33,8 +31,7 @@ function App({ path }: { path?: string }) {
   const cleanPath = currentPath.replace(/\/$/, '');
   const isRegistrationPage = cleanPath === '/inscription';
   const isPreRegistrationPage = cleanPath === '/preinscription';
-  const isPrivacyPage = cleanPath === '/privacy';
-  const page = isRegistrationPage ? 'register' : isPreRegistrationPage ? 'pre' : isPrivacyPage ? 'privacy' : 'home';
+  const page = isRegistrationPage ? 'register' : isPreRegistrationPage ? 'pre' : 'home';
 
   return (
     // "user": visitors whose device asks for reduced motion still get the fades and the demos'
@@ -44,7 +41,7 @@ function App({ path }: { path?: string }) {
         <DocumentMeta page={page} />
         <SkipLink />
         <Navbar path={currentPath} />
-        {isRegistrationPage ? <RegistrationPage /> : isPreRegistrationPage ? <PreRegistrationPage /> : isPrivacyPage ? <PrivacyPage /> : <HomePage />}
+        {isRegistrationPage ? <RegistrationPage /> : isPreRegistrationPage ? <PreRegistrationPage /> : <HomePage />}
         <Footer path={currentPath} />
       </LanguageProvider>
     </MotionConfig>
