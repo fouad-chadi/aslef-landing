@@ -73,7 +73,7 @@ export function Footer({ path = '/' }: { path?: string }) {
                 <Globe size={15} aria-hidden />
                 <span lang={lang === 'fr' ? 'ar' : 'fr'}>{t('common.langSwitch')}</span>
               </button>
-              <div className="flex items-center gap-1">
+              <div className="flex items-center gap-2">
                 {socials.map(({ name, href, icon }) => (
                   <a
                     key={name}
@@ -81,9 +81,9 @@ export function Footer({ path = '/' }: { path?: string }) {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={name}
-                    className="flex h-10 w-10 items-center justify-center rounded-full transition-[background-color,transform] duration-200 hover:-translate-y-0.5 hover:bg-white"
+                    className="flex h-12 w-12 items-center justify-center rounded-full transition-[background-color,transform] duration-200 hover:-translate-y-0.5 hover:bg-white"
                   >
-                    <img src={icon} alt="" width={26} height={26} loading="lazy" className="h-[26px] w-[26px] object-contain" />
+                    <img src={icon} alt="" width={34} height={34} loading="lazy" className="h-[34px] w-[34px] object-contain" />
                   </a>
                 ))}
               </div>
