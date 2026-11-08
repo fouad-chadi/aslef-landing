@@ -13,6 +13,7 @@ const NAV_LINKS: { key: TranslationKey; id: string }[] = [
   { key: 'nav.forWho', id: 'pour-qui' },
   { key: 'nav.how', id: 'comment-ca-marche' },
   { key: 'nav.day', id: 'journee' },
+  { key: 'nav.faq', id: 'faq' },
   { key: 'nav.contact', id: 'contact' },
 ];
 
@@ -45,7 +46,7 @@ export function Navbar({ path = '/' }: { path?: string }) {
 
   // Section anchors only exist on the home page - from any other page (e.g. /inscription),
   // prefix them so the browser navigates home first instead of doing nothing.
-  const isHome = !['/inscription', '/preinscription'].includes(path.replace(/\/$/, ''));
+  const isHome = !['/inscription', '/preinscription', '/privacy'].includes(path.replace(/\/$/, ''));
   const hrefFor = (id: string) => (isHome ? `#${id}` : `/#${id}`);
   const active = useActiveSection(isHome);
 

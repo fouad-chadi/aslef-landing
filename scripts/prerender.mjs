@@ -24,6 +24,12 @@ const pages = [
     description: 'Inscrivez votre crèche sur Aslef : remplissez le formulaire et nous vous recontactons rapidement pour finaliser votre inscription.',
   },
   {
+    path: '/privacy',
+    out: 'dist/privacy.html',
+    title: 'Politique de confidentialité — Aslef',
+    description: 'Quelles données Aslef collecte, pourquoi, où elles sont hébergées, combien de temps elles sont conservées et comment exercer vos droits (loi algérienne n° 18-07).',
+  },
+  {
     path: '/preinscription',
     out: 'dist/preinscription.html',
     title: 'Préinscription — Aslef',

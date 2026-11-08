@@ -6,6 +6,7 @@ import { DayStory } from '../components/DayStory';
 import { Roles } from '../components/Roles';
 import { DemoVideo } from '../components/DemoVideo';
 import { Security } from '../components/Security';
+import { FAQ } from '../components/FAQ';
 import { HowItWorks } from '../components/HowItWorks';
 import { About } from '../components/About';
 import { FinalCTA } from '../components/FinalCTA';
@@ -47,6 +48,7 @@ export function HomePage() {
       <DayStory />
       <DemoVideo />
       <Security />
+      <FAQ />
       <About />
       <ClientLogos />
       <FinalCTA />

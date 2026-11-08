@@ -18,9 +18,8 @@ const linkClass =
 
 export function Footer({ path = '/' }: { path?: string }) {
   const { t, lang, toggleLang } = useLanguage();
-  const year = new Date().getFullYear();
   // Section anchors live on the home page: from /inscription they must go home first.
-  const isHome = !['/inscription', '/preinscription'].includes(path.replace(/\/$/, ''));
+  const isHome = !['/inscription', '/preinscription', '/privacy'].includes(path.replace(/\/$/, ''));
   const anchor = (id: string) => (isHome ? `#${id}` : `/#${id}`);
 
   const columns: { titleKey: TranslationKey; links: { key: TranslationKey; href: string; role?: RoleKey }[] }[] = [
@@ -30,6 +29,7 @@ export function Footer({ path = '/' }: { path?: string }) {
         { key: 'footer.link.manager', href: anchor('pour-qui'), role: 'manager' },
         { key: 'footer.link.educator', href: anchor('pour-qui'), role: 'educator' },
         { key: 'footer.link.parent', href: anchor('pour-qui'), role: 'parent' },
+        { key: 'nav.faq', href: anchor('faq') },
         { key: 'nav.about', href: anchor('a-propos') },
         { key: 'nav.contact', href: anchor('contact') },
       ],
@@ -107,9 +107,6 @@ export function Footer({ path = '/' }: { path?: string }) {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-[var(--color-line)] pt-6 text-[13px] text-[var(--color-ink-soft)] sm:flex-row">
-          <span>
-            © {year} Aslef. {t('footer.rights')}
-          </span>
           <span>{t('contact.location.value')}</span>
         </div>
       </Container>
